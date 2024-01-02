@@ -1,0 +1,431 @@
+* {
+  box-sizing: border-box;
+  font-family: "Avenir Next Regular", sans-serif;
+}
+
+.header {
+  background-color: #313131;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+.header .band-intro__logo {
+  padding-left: 48px;
+  padding-right: 36px;
+}
+.header .nav {
+  display: flex;
+}
+.header .nav__list {
+  display: flex;
+  list-style: none;
+}
+.header .nav__list li.nav__list-item {
+  padding-right: 36px;
+}
+.header .nav__list li.nav__list-item a {
+  position: relative;
+  text-decoration: none;
+  color: #FAFAFA;
+  display: inline-block;
+}
+.header .nav__list li.nav__list-item a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+.header .nav__list li.nav__list-item a:hover::after, .header .nav__list li.nav__list-item a.active::after {
+  width: 100%;
+}
+
+.band__banner {
+  background-image: url(../Assets/Images/hero-bio.jpg);
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+.band__banner-title {
+  position: absolute;
+  top: 45%;
+  font-size: 60px;
+  line-height: 68px;
+  font-weight: 700;
+  color: white;
+  padding-left: 2.25rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  max-width: 72%;
+  margin: auto;
+  padding: 0;
+}
+.about__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.about__musicians-image {
+  padding-left: 2.25rem;
+}
+.about__title {
+  flex-basis: 100%;
+  text-align: left;
+  padding-bottom: 2.25rem;
+  padding-top: 3rem;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  margin: 0;
+}
+.about__musicians-image {
+  background-image: url(../Assets/Images/band.jpg);
+  height: 100vh;
+  width: 72vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+}
+.about__quote {
+  margin: 0;
+  font-size: 24px;
+}
+.about__quote blockquote {
+  font-style: italic;
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+  margin-left: 0;
+  font-size: 1.25rem;
+}
+.about__quote figcaption {
+  margin-top: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+}
+.about__content {
+  display: flex;
+  justify-content: space-between;
+}
+.about__text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 4rem;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 0;
+}
+.about__text > p {
+  width: 48%;
+  text-align: left;
+  margin-bottom: 1em;
+}
+
+.gallery {
+  margin: 0 auto;
+  background-color: #FAFAFA;
+  padding-right: 2.25rem;
+}
+.gallery__title, .gallery__image {
+  padding-left: 2.25rem;
+}
+.gallery__title {
+  padding-bottom: 2.25rem;
+  margin: 0;
+  padding-top: 3rem;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+.gallery__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+.gallery__image {
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 2.25rem;
+}
+
+.contact {
+  margin: 0 auto;
+  background-color: #323232;
+}
+.contact .contact__description,
+.contact .contact__social-media,
+.contact .contact__addresses,
+.contact .contact__logo {
+  padding-left: 2.25rem;
+}
+.contact .contact__title,
+.contact .contact__social-media {
+  padding-bottom: 2.25rem;
+  padding-top: 3rem;
+  color: #FFFFFF;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  margin: 0;
+}
+.contact .contact__logo {
+  margin-left: auto;
+  margin-right: 2.25rem;
+}
+.contact .social-media__item {
+  margin-right: 1.5rem;
+}
+.contact .contact__description {
+  display: flex;
+}
+.contact .contact__addresses {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #323232;
+  color: #fff;
+}
+.contact .contact__addresses .address {
+  flex: 1 1 30%;
+}
+.contact .contact__addresses .address__info, .contact .contact__addresses .address__name {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+.contact .contact__addresses .address__location, .contact .contact__addresses .address__role {
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+.contact .contact__addresses a.address__email {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+.contact .footer__copyright {
+  padding-left: 2.25rem;
+  color: #fff;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  padding-top: 3rem;
+  padding-bottom: 2.25rem;
+}
+
+/*Responsive  Tablet*/
+@media (max-width: 768px) {
+  /* Header*/
+  .header {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+  }
+  .band-intro__logo {
+    padding-left: 24px;
+    padding-right: 18px;
+  }
+  .nav {
+    display: flex;
+  }
+  .nav__list-item {
+    padding-right: 20px;
+  }
+  .nav__list-item a {
+    font-size: 14px;
+  }
+  .band__banner-title {
+    font-size: 40px;
+    line-height: 48px;
+    padding-left: 1.5rem;
+  }
+  .about {
+    max-width: 100%;
+    padding: 1rem;
+  }
+  .about__title,
+  .about__quote {
+    font-size: 20px;
+  }
+  .gallery {
+    padding: 1.5rem;
+  }
+  .gallery__container {
+    gap: 5px;
+  }
+  .gallery__image {
+    flex: 1 1 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    margin-bottom: 1rem;
+  }
+  .gallery__title {
+    font-size: 20px;
+    padding-bottom: 1rem;
+  }
+  .contact {
+    padding: 1.5rem;
+  }
+  .contact .contact__description,
+  .contact .contact__social-media,
+  .contact .contact__addresses,
+  .contact .contact__logo {
+    padding-left: 1.5rem;
+  }
+  .contact .contact__title,
+  .contact .contact__social-media {
+    padding-bottom: 1.5rem;
+    padding-top: 2rem;
+    font-size: 20px;
+  }
+  .contact .contact__logo {
+    margin-right: 1.5rem;
+  }
+  .contact .social-media__item {
+    margin-right: 1rem;
+  }
+  .contact .contact__addresses {
+    justify-content: start;
+  }
+  .contact .contact__addresses .address {
+    flex: 1 1 45%;
+  }
+  .contact .contact__addresses .address__info, .contact .contact__addresses .address__name, .contact .contact__addresses .address__location, .contact .contact__addresses .address__role {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .contact .contact__addresses a.address__email {
+    font-size: 12px;
+  }
+  .contact .footer__copyright {
+    padding-left: 1.5rem;
+    font-size: 12px;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .band-intro__logo {
+    padding-left: 20px;
+    padding-right: 15px;
+  }
+  .nav {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .nav__list-item a {
+    font-size: 12px;
+  }
+  .band__banner {
+    background-size: contain;
+    background-repeat: no-repeat;
+    max-height: 59vh;
+  }
+  .band__banner-title {
+    font-size: 30px;
+    line-height: 38px;
+    padding-left: 1rem;
+    top: 26%;
+  }
+  .about {
+    max-width: 100%;
+    padding: 1rem;
+  }
+  .about__title {
+    font-size: 18px;
+    padding: 1rem 1rem 0;
+  }
+  .about__content {
+    flex-direction: column;
+  }
+  .about__musicians-image {
+    width: 93vw;
+    height: 48vh;
+    margin: 1rem 0;
+  }
+  .about__quote {
+    font-size: 16px;
+  }
+  .about__quote blockquote {
+    margin-bottom: 1rem;
+  }
+  .about__quote figcaption {
+    font-size: 14px;
+  }
+  .about__text {
+    font-size: 12px;
+    margin: 1rem 0;
+  }
+  .about__text > p {
+    width: 100%;
+  }
+  .gallery {
+    padding: 1rem;
+  }
+  .gallery__title {
+    font-size: 18px;
+    padding: 1rem 1rem 0;
+  }
+  .gallery__container {
+    gap: 5px;
+  }
+  .gallery__image {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    padding-left: 0;
+  }
+  .contact {
+    padding: 1rem;
+  }
+  .contact .contact__description {
+    display: block;
+  }
+  .contact .contact__logo {
+    display: none;
+  }
+  .contact .contact__title,
+  .contact .contact__social-media {
+    font-size: 18px;
+    padding: 1rem 1rem 0;
+  }
+  .contact .contact__addresses {
+    flex-direction: column;
+  }
+  .contact .contact__addresses .address,
+  .contact .contact__addresses .contact__social-media,
+  .contact .contact__addresses .contact__logo {
+    flex-basis: 100%;
+    text-align: left;
+  }
+  .contact .social-media__item,
+  .contact .contact__logo {
+    margin-bottom: 1rem;
+  }
+  .contact .footer__copyright {
+    font-size: 12px;
+    padding: 1rem 0;
+  }
+}/*# sourceMappingURL=bio.css.map */

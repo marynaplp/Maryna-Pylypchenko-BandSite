@@ -1,0 +1,523 @@
+
+* {
+    box-sizing: border-box;
+    font-family: 'Avenir Next Regular', sans-serif;
+  }
+  
+  // Header
+  .header {
+    background-color: #313131;
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+  
+    .band-intro__logo {
+      padding-left: 48px;
+      padding-right: 36px;
+    }
+  
+    .nav {
+        display: flex;
+      
+        &__list {
+          display: flex;
+          list-style: none; 
+      
+          li.nav__list-item {
+            padding-right: 36px;
+      
+            a {
+              position: relative;
+              text-decoration: none;
+              color: #FAFAFA;
+              display: inline-block; 
+      
+              &::after {
+                content: '';
+                display: block; 
+                position: absolute;
+                width: 0; 
+                height: 2px;
+                bottom: -5px; 
+                left: 0;
+                background-color: #fff;
+                transition: width 0.3s ease;
+              }
+      
+              &:hover::after,
+              &.active::after {
+                width: 100%; 
+              }
+            }
+          }
+        }
+      }
+  }
+  
+  // Band banner
+  .band__banner {
+    background-image: url(../Assets/Images/hero-bio.jpg);
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+  
+    &-title {
+      position: absolute;
+      top: 45%;
+      font-size: 60px;
+      line-height: 68px;
+      font-weight: 700;
+      color: white;
+      padding-left: 2.25rem;
+    }
+  }
+  
+  // About
+  .about {
+    display: flex;
+    flex-direction: column;
+    max-width: 72%;
+    margin: auto;
+    padding: 0;
+  
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+    }
+  
+    &__musicians-image{
+      padding-left: 2.25rem;
+    }
+  
+    &__title {
+      flex-basis: 100%;
+      text-align: left;
+      padding-bottom: 2.25rem;
+      padding-top: 3rem;
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
+      margin: 0;
+    }
+  
+    &__musicians-image {
+      background-image: url(../Assets/Images/band.jpg);
+      height: 100vh;
+      width: 72vw;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: auto;
+    }
+  
+    &__quote {
+      margin: 0;
+      font-size: 24px;
+  
+      blockquote {
+        font-style: italic;
+        margin-bottom: 0.5em;
+        line-height: 1.5;
+        margin-left: 0;
+        font-size: 1.25rem;
+      }
+  
+      figcaption {
+        margin-top: 1.5rem;
+        font-style: normal;
+        font-weight: bold;
+      }
+    }
+  
+    &__content {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    &__text {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-right: 4rem;
+      line-height: 20px;
+      font-size: 14px;
+      font-weight: 400;
+      margin-top: 0;
+  
+      > p {
+        width: 48%;
+        text-align: left;
+        margin-bottom: 1em;
+      }
+    }
+  }
+  
+  // Gallery
+  .gallery {
+    margin: 0 auto;
+    background-color: #FAFAFA;
+    padding-right:2.25rem;
+  
+    &__title,
+
+    &__image {
+      padding-left: 2.25rem;
+    }
+  
+    &__title {
+      padding-bottom: 2.25rem;
+      margin: 0;
+      padding-top: 3rem;
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
+    }
+  
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+  
+    &__image {
+      flex: 1 1 calc(33.333% - 20px);
+      max-width: calc(33.333% - 20px);
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 2.25rem;
+    }
+  }
+  
+  // Footer
+.contact {
+    margin: 0 auto;
+    background-color: #323232;
+
+    .contact__description,
+    .contact__social-media,
+    .contact__addresses,
+    .contact__logo {
+      padding-left: 2.25rem;
+    }
+  
+    .contact__title,
+    .contact__social-media {
+      padding-bottom: 2.25rem;
+      padding-top: 3rem;
+      color: #FFFFFF;
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 600;
+      margin:0;
+    }
+  
+    .contact__logo {
+      margin-left: auto;
+      margin-right: 2.25rem;
+    }
+  
+    .social-media__item {
+      margin-right: 1.5rem;
+    }
+    .contact__description{
+        display:flex;
+    }
+    .contact__addresses {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background-color: #323232;
+      color: #fff;
+  
+      .address {
+        flex: 1 1 30%;
+  
+        &__info,
+        &__name {
+          margin: 0;
+          padding: 0;
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 600;
+        }
+  
+        &__location,
+        &__role {
+          margin-top: 2.25rem;
+          margin-bottom: 2.25rem;
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 400;
+        }
+      }
+  
+      a.address__email {
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+      }
+    }
+  
+    .footer__copyright {
+      padding-left: 2.25rem;
+      color: #fff;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 400;
+      padding-top: 3rem;
+      padding-bottom: 2.25rem;
+    }
+  }
+  /*Responsive  Tablet*/
+  @media (max-width: 768px) {
+    /* Header*/
+    .header {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      display:flex;
+    }
+  
+    .band-intro__logo {
+      padding-left: 24px;
+      padding-right: 18px;
+    }
+  .nav{
+    display:flex;
+  }
+    // Navigation 
+    .nav__list-item {
+      padding-right: 20px; 
+    }
+  
+    .nav__list-item a {
+      font-size: 14px; 
+    }
+  
+    // Band banner 
+    .band__banner-title {
+      font-size: 40px; 
+      line-height: 48px;
+      padding-left: 1.5rem;
+    }
+  
+    // About 
+    .about {
+      max-width: 100%; 
+      padding: 1rem; 
+    }
+  
+    .about__title,
+    .about__quote {
+      font-size: 20px; 
+    }
+  
+    // Gallery
+    .gallery {
+        padding: 1.5rem; 
+    
+        &__container {
+          gap: 5px; 
+        }
+    
+        &__image {
+         
+          flex: 1 1 calc(50% - 10px);
+          max-width: calc(50% - 10px);
+          margin-bottom: 1rem;
+        }
+    
+        &__title {
+         
+          font-size: 20px; 
+          padding-bottom: 1rem; 
+        }
+      }
+  
+      .contact {
+        padding: 1.5rem; 
+    
+        .contact__description,
+        .contact__social-media,
+        .contact__addresses,
+        .contact__logo {
+          padding-left: 1.5rem; 
+        }
+    
+        .contact__title,
+        .contact__social-media {
+          padding-bottom: 1.5rem; 
+          padding-top: 2rem; 
+          font-size: 20px;
+        }
+    
+        .contact__logo {
+          margin-right: 1.5rem; 
+        }
+    
+        .social-media__item {
+          margin-right: 1rem; 
+        }
+    
+        .contact__addresses {
+          justify-content: start;
+          .address {
+            flex: 1 1 45%; 
+            &__info,
+            &__name,
+            &__location,
+            &__role {
+              font-size: 12px; 
+              line-height: 20px; 
+            }
+          }
+    
+          a.address__email {
+            font-size: 12px;
+          }
+        }
+    
+        .footer__copyright {
+          padding-left: 1.5rem; 
+          font-size: 12px; 
+          padding-top: 2rem; 
+          padding-bottom: 1.5rem; 
+        }
+      }
+  }
+
+  //Responsive Mobile
+  @media (max-width: 480px) {
+    
+    .header {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  
+    .band-intro__logo {
+      padding-left: 20px;
+      padding-right: 15px;
+    }
+  
+    .nav {
+      flex-direction: column;
+      margin: 0 auto;
+    }
+  
+    .nav__list-item a {
+      font-size: 12px; 
+    }
+    .band__banner{
+        background-size: contain;
+        background-repeat:no-repeat;
+        max-height: 59vh;
+    }
+    .band__banner-title {
+      font-size: 30px; 
+      line-height: 38px;
+      padding-left: 1rem;
+      top: 26%;
+    }
+    .about {
+        max-width: 100%;
+        padding: 1rem; 
+    
+        &__title {
+          font-size: 18px; 
+          padding: 1rem 1rem 0; 
+        }
+        &__content{
+            flex-direction: column;
+        } 
+        &__musicians-image {
+            width: 93vw;
+            height: 48vh;
+          margin: 1rem 0; 
+        }
+       
+        &__quote {
+          font-size: 16px; 
+    
+          blockquote {
+            margin-bottom: 1rem;
+          }
+    
+          figcaption {
+            font-size: 14px; 
+          }
+         
+        }
+    
+        &__text {
+          font-size: 12px; 
+          margin: 1rem 0; 
+    
+          > p {
+            width: 100%; 
+          }
+        }
+      }
+    
+      .gallery {
+        padding: 1rem; 
+    
+        &__title {
+          font-size: 18px; 
+          padding: 1rem 1rem 0; 
+        }
+    
+        &__container {
+          gap: 5px; 
+        }
+    
+        &__image {
+          flex-basis: 100%;
+          max-width: 100%; 
+          margin-bottom: 1rem;
+          padding-left: 0;
+        }
+      }
+    
+      // Footer 
+      .contact {
+        padding: 1rem; 
+        .contact__description{
+            display:block;
+        }
+        .contact__logo{
+            display:none;
+        }
+        .contact__title,
+        .contact__social-media {
+          font-size: 18px; 
+          padding: 1rem 1rem 0;
+        }
+    
+        .contact__addresses
+        {
+          flex-direction: column; 
+    
+          .address,
+          .contact__social-media,
+          .contact__logo {
+            flex-basis: 100%; 
+            text-align: left;
+          }
+        }
+    
+        .social-media__item,
+        .contact__logo {
+          margin-bottom: 1rem; 
+        }
+    
+        .footer__copyright {
+          font-size: 12px;
+          padding: 1rem 0; 
+        }
+      }
+   
+  }
+  
