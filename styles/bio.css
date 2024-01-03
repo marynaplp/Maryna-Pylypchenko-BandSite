@@ -80,6 +80,7 @@
   text-align: left;
   padding-bottom: 2.25rem;
   padding-top: 3rem;
+  padding-left: 2.25rem;
   font-size: 24px;
   line-height: 32px;
   font-weight: 600;
@@ -341,7 +342,7 @@
   .band__banner {
     background-size: contain;
     background-repeat: no-repeat;
-    max-height: 59vh;
+    height: 29vh;
   }
   .band__banner-title {
     font-size: 30px;
@@ -355,38 +356,44 @@
   }
   .about__title {
     font-size: 18px;
-    padding: 1rem 1rem 0;
+    padding: 24px 16px 16px;
+  }
+  .about__title2 {
+    font-size: 18px;
+    padding: 24px 0 16px;
   }
   .about__content {
     flex-direction: column;
   }
   .about__musicians-image {
-    width: 93vw;
-    height: 48vh;
-    margin: 1rem 0;
+    width: 90vw;
+    height: 28vh;
+    margin: 0;
   }
   .about__quote {
     font-size: 16px;
   }
   .about__quote blockquote {
     margin-bottom: 1rem;
+    font-size: 13px;
+    font-weight: 600;
   }
   .about__quote figcaption {
     font-size: 14px;
   }
   .about__text {
-    font-size: 12px;
-    margin: 1rem 0;
+    font-size: 13px;
+    margin-bottom: 16px;
   }
   .about__text > p {
     width: 100%;
   }
   .gallery {
-    padding: 1rem;
+    padding: 0 16px;
   }
   .gallery__title {
     font-size: 18px;
-    padding: 1rem 1rem 0;
+    padding: 1rem 0 0;
   }
   .gallery__container {
     gap: 5px;
@@ -402,6 +409,8 @@
   }
   .contact .contact__description {
     display: block;
+    margin: 0;
+    padding: 0;
   }
   .contact .contact__logo {
     display: none;
@@ -409,10 +418,12 @@
   .contact .contact__title,
   .contact .contact__social-media {
     font-size: 18px;
-    padding: 1rem 1rem 0;
+    padding: 1rem 0;
   }
   .contact .contact__addresses {
     flex-direction: column;
+    margin: 0;
+    padding: 0;
   }
   .contact .contact__addresses .address,
   .contact .contact__addresses .contact__social-media,
