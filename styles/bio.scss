@@ -182,6 +182,7 @@
       }
     
       .comment-avatar {
+        text-align: center;
         position:relative;
     
         img {
@@ -193,7 +194,7 @@
           object-fit: cover; 
           display: block; 
           border: 2px solid #ffffff;
-         
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
         }
       }
     
