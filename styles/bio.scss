@@ -948,7 +948,7 @@
             text-align: left;
             padding-bottom: 2rem;
             padding-top: 2.5rem;
-            padding-left:2rem;
+            padding-left: 2.25rem;
             font-size: 1.25rem;
             line-height: 1.5rem;
             font-weight: 600;
@@ -1005,6 +1005,7 @@
     margin: 0 auto;
     background-color: #FAFAFA;
     padding-right:2.25rem;
+    padding-left: 2.25rem;
 
       &__container {
         display: flex;
@@ -1021,7 +1022,7 @@
       }
 
       &__title {
-        padding: 3rem 0 2.25rem 0;
+        padding: 3rem 0  0;
         margin: 0;
         font-size: 1.5rem;
         line-height: 2rem;
@@ -1036,11 +1037,11 @@
 
     h3 {
       text-align: left;
-      margin-left: 13px;
       font-size: 24px;
       margin-bottom: 1rem;
       line-height: 2rem;
       font-weight: 600;
+      padding-left: 2.25rem;
     }
     .comment__block {
       display: flex;
@@ -1060,12 +1061,12 @@
         height: auto;
       }
     }
-
+    
     .comments__container {
       .comment__form {
         margin-right: 11px;
         margin-left: 14px;
-        width:66%;
+        width: 59vw;
         margin: 0 auto;
         label {
           display: block;
@@ -1091,11 +1092,14 @@
           font-size: 18px;
           cursor: pointer;
           border-radius: 5px;
-          width: 100%;
           margin-bottom: 10px;
           text-transform: uppercase;
+          margin-left:72%;
         }
       }
+    }
+    #commentInput{
+      height:19vh;
     }
     //default messages block
     .comments__list{
