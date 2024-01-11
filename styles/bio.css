@@ -476,21 +476,22 @@
   }
   .comments__section h3 {
     text-align: left;
-    margin-left: 13px;
     font-size: 24px;
     margin-bottom: 1rem;
     line-height: 2rem;
     font-weight: 600;
+    padding-left: 2.25rem;
   }
   .comments__section .comment__block {
     display: flex;
+    justify-content: center;
   }
   .comments__section .comment__avatar {
     flex-shrink: 0;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-left: 13px;
+    margin-right: 13px;
     overflow: hidden;
     margin-top: 20px;
   }
@@ -498,9 +499,19 @@
     width: 100%;
     height: auto;
   }
+  .comments__section .comments__divider {
+    width: 69vw;
+    margin: 0 auto;
+    height: 1px;
+    background-color: #ddd;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
   .comments__section .comments__container .comment__form {
     margin-right: 11px;
     margin-left: 14px;
+    width: 64vw;
+    margin: 0 auto;
   }
   .comments__section .comments__container .comment__form label {
     display: block;
@@ -524,9 +535,16 @@
     font-size: 18px;
     cursor: pointer;
     border-radius: 5px;
-    width: 100%;
     margin-bottom: 10px;
     text-transform: uppercase;
+    margin-left: 85%;
+  }
+  .comments__section #commentInput {
+    height: 19vh;
+  }
+  .comments__section .comments__list {
+    width: 70%;
+    margin: 0 auto;
   }
   .comments__section .default-comments__block {
     display: flex;
@@ -561,6 +579,9 @@
     font-size: 0.85em;
     margin-top: 5px;
     margin-top: 18px;
+  }
+  .comments__section .default-comments__text {
+    margin: 0;
   }
   .comments__section .default-comments__divider {
     height: 1px;
