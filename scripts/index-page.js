@@ -18,55 +18,44 @@ const commentsArray = [
   function displayComment(comment){
     
     const commentSection =document.querySelector(".comments__list");
-//create the main block
 const commentBlock=document.createElement("div");
 commentBlock.className= "default-comments__block";
 
-// create avatartDiv
+
 const avatartDiv = document.createElement("div");
 avatartDiv.className= "default-comments__avatar";
 commentBlock.appendChild(avatartDiv);
 
 //default-comments__details
-//create the element
+
 const commentsDetails =document.createElement("div");
-//create the class inside the commentsDeatils 
 commentsDetails.className="default-comments__details";
-//add the commentsDeatils
 
 
-//create the name and the date 
 const nameDateDiv =document.createElement("div")
 nameDateDiv.className="default-comments__name-and-date";
 
 
-//create and append the name
 const nameParagraph=document.createElement('p');
 nameParagraph.className="default-comments__name";
-nameParagraph.textContent=comment.name;// name == the mane from the objec
+nameParagraph.textContent=comment.name;
 nameDateDiv.appendChild(nameParagraph);
 
-///create and append the span
 const spanDate=document.createElement("span");
 spanDate.className="default-comments__date";
 spanDate.textContent=comment.timestamp;
 nameDateDiv.appendChild(spanDate);
 
-//append the name and div in the details div
 commentsDetails.appendChild(nameDateDiv)
 
-// create and append the text div
 const commentText=document.createElement("p")
 commentText.className="default-comments__text";
 commentText.textContent=comment.text;
 commentsDetails.appendChild(commentText);
 
-//append the detail div into the commentBlock
 commentBlock.appendChild(commentsDetails)
-//appent the comment block in the main section
 commentSection.appendChild(commentBlock)
 
-//appens the divider after each comment
 const divider=document.createElement("div");
 divider.className="default-comments__divider";
 commentSection.appendChild(divider)
@@ -84,15 +73,12 @@ function clearComments() {
 function renderComment(){
     clearComments();
     commentsArray.forEach(comment =>displayComment(comment))
-    console.log(commentsArray)
 }
 
-//Event Listener for submit form
 document.querySelector(".comment__form").addEventListener("submit", function(event){
   event.preventDefault();
   const nameInput = document.querySelector("#nameInput").value
  const commentInput = document.querySelector("#commentInput").value
- //add the comment
 const newComment={
   name:nameInput,
   timestamp: new Date().toLocaleDateString(),
@@ -102,11 +88,11 @@ commentsArray.unshift(newComment)
 
 renderComment()
 
-//clean the form
 document.querySelector("#nameInput").value = " "
 document.querySelector("#commentInput").value=" "
 
 })
-
-
 renderComment()
+
+
+
