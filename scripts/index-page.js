@@ -86,5 +86,27 @@ function renderComment(){
     commentsArray.forEach(comment =>displayComment(comment))
     console.log(commentsArray)
 }
+
+//Event Listener for submit form
+document.querySelector(".comment__form").addEventListener("submit", function(event){
+  event.preventDefault();
+  const nameInput = document.querySelector("#nameInput").value
+ const commentInput = document.querySelector("#commentInput").value
+ //add the comment
+const newComment={
+  name:nameInput,
+  timestamp: new Date().toLocaleDateString(),
+  text:commentInput
+}
+commentsArray.unshift(newComment)
+
 renderComment()
 
+//clean the form
+document.querySelector("#nameInput").value = " "
+document.querySelector("#commentInput").value=" "
+
+})
+
+
+renderComment()
