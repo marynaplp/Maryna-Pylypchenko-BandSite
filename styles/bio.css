@@ -1,26 +1,3 @@
-@font-face {
-  font-family: "Avenir";
-  src: url("/path-to-fonts/Avenir-Regular.woff2") format("woff2"), url("/path-to-fonts/Avenir-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Avenir";
-  src: url("/path-to-fonts/Avenir-Bold.woff2") format("woff2"), url("/path-to-fonts/Avenir-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Avenir";
-  src: url("/path-to-fonts/Avenir-Italic.woff2") format("woff2"), url("/path-to-fonts/Avenir-Italic.woff") format("woff");
-  font-weight: normal;
-  font-style: italic;
-}
-* {
-  box-sizing: border-box;
-  font-family: "Avenir Next Pro Lt", sans-serif;
-}
-
 .header {
   background-color: #313131;
   padding-top: 1rem;
@@ -108,7 +85,7 @@
 .about__musicians-image {
   background-image: url(../Assets/Images/band.jpg);
   width: 90vw;
-  height: 57vh;
+  height: 39vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -122,7 +99,7 @@
 .about__quote blockquote {
   margin: 0;
   margin-bottom: 1rem;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 600;
   font-style: italic;
 }
@@ -143,6 +120,7 @@
   font-size: 0.8125rem;
   margin-bottom: 1rem;
   line-height: 1.5;
+  color: rgba(0, 0, 0, 0.5);
 }
 .about__text > p {
   width: 100%;
@@ -166,7 +144,7 @@
   text-align: center;
 }
 .gallery__image {
-  max-width: 94%;
+  max-width: 94vw;
   margin-bottom: 1rem;
   display: inline-block;
   margin: 0 0 10px 0;
@@ -192,7 +170,6 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-left: 0.8125rem;
   overflow: hidden;
   margin-top: 1.25rem;
 }
@@ -215,7 +192,6 @@
 }
 .comments__section .comments__container .comment__form input[type=text],
 .comments__section .comments__container .comment__form textarea {
-  width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
   border: 1px solid #E1E1E1;
@@ -238,6 +214,12 @@
 .comments__section .comments__container .comment__form button:hover {
   background-color: black;
 }
+.comments__section .comments__divider {
+  width: 90vw;
+  margin: 0 auto;
+  height: 1px;
+  background-color: #E1E1E1;
+}
 .comments__section input::-moz-placeholder, .comments__section #commentInput::-moz-placeholder {
   color: #323232;
 }
@@ -253,7 +235,6 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  margin-right: 10px;
   margin-top: 20px;
   background-color: #2c3e50;
   justify-content: center;
@@ -263,7 +244,8 @@
   text-transform: uppercase;
 }
 .comments__section .default-comments__details {
-  margin-left: 5px;
+  width: 82%;
+  margin-left: 14px;
 }
 .comments__section .default-comments__name-and-date {
   display: flex;
@@ -353,16 +335,392 @@
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+.contact .footer__logo {
+  margin-left: 1rem;
+  margin-top: 5rem;
+}
 .contact .contact__copyright {
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
   font-size: 12px;
   line-height: 18px;
   font-weight: 400;
-  padding-top: 2rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
   color: #fff;
 }
 
+@media (min-width: 768px) and (max-width: 1279px) {
+  /* Header*/
+  .header {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: #313131;
+  }
+  .header .nav {
+    display: flex;
+    width: 100%;
+  }
+  .header .nav__logo {
+    padding-left: 1.5rem;
+    padding-top: 1rem;
+    margin: 0;
+  }
+  .header .nav__list {
+    display: flex;
+    list-style: none;
+  }
+  .header .nav__list-item {
+    padding-right: 1.25rem;
+  }
+  .header .nav__list-item a {
+    font-size: 0.875rem;
+    position: relative;
+    text-decoration: none;
+    color: #FAFAFA;
+    display: inline-block;
+  }
+  .header .nav__list-item a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+  }
+  .header .nav__list-item a.active {
+    color: #fff;
+  }
+  .header .nav__list-item a:hover::after, .header .nav__list-item a.active::after {
+    width: 100%;
+  }
+  .band__banner {
+    background-image: url(../Assets/Images/hero-bio.jpg);
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+  }
+  .band__banner-title {
+    position: absolute;
+    top: 45%;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    padding-left: 2.25rem;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    max-width: 72%;
+    margin: auto;
+    padding: 0;
+  }
+  .about__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .about__musicians-image {
+    max-width: 100%;
+    background-image: url(../Assets/Images/band.jpg);
+    height: 76vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+  }
+  .about__title {
+    flex-basis: 100%;
+    text-align: left;
+    padding-bottom: 2rem;
+    padding-top: 2.5rem;
+    padding-left: 2.25rem;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  .about__quote {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .about__quote blockquote {
+    font-style: italic;
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+    margin-left: 0;
+    font-size: 1.25rem;
+  }
+  .about__quote figcaption {
+    margin-top: 1.5rem;
+    font-style: normal;
+    font-weight: bold;
+  }
+  .about__content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .about .about__text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 2rem;
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-top: 0;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  .about .about__text > p {
+    width: 48%;
+    text-align: left;
+    margin-bottom: 1em;
+  }
+  .about .about__text > p:nth-child(1) {
+    margin-right: 10px;
+  }
+  .about .about__title2 {
+    font-size: 1.125rem;
+    padding: 1.5rem 0 1rem;
+  }
+  .gallery {
+    margin: 0 auto;
+    background-color: #FAFAFA;
+    padding-right: 2.25rem;
+    padding-left: 2.25rem;
+    width: 100%;
+  }
+  .gallery__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .gallery__image {
+    flex: 1 1 calc(33.333% - 10px);
+    max-width: calc(33.333% - 10px);
+    margin-bottom: 1rem;
+  }
+  .gallery__title {
+    padding: 3rem 0 2rem;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 600;
+    color: #323232;
+  }
+  .comments__section {
+    border-radius: 5px;
+  }
+  .comments__section h3 {
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 1rem;
+    line-height: 2rem;
+    font-weight: 600;
+    padding: 0 0 2rem 1.5rem;
+  }
+  .comments__section .comment__block {
+    display: flex;
+    justify-content: center;
+  }
+  .comments__section .comment__avatar {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 13px;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  .comments__section .comment__avatar img {
+    width: 100%;
+    height: auto;
+  }
+  .comments__section .comments__container .comment__form {
+    margin-right: 11px;
+    margin-left: 14px;
+    width: 59vw;
+    margin: 0 auto;
+  }
+  .comments__section .comments__container .comment__form label {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.9rem;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #AFAFAF;
+  }
+  .comments__section .comments__container .comment__form input[type=text],
+  .comments__section .comments__container .comment__form textarea {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #E1E1E1;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+  }
+  .comments__section .comments__container .comment__form button {
+    background-color: #323232;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    width: 53vw;
+  }
+  .comments__section .comments__container .comment__form button:hover {
+    background-color: #000;
+  }
+  .comments__section .comments__divider {
+    width: 69vw;
+    margin: 0 auto;
+    height: 1px;
+    background-color: #E1E1E1;
+  }
+  .comments__section input::-moz-placeholder, .comments__section #commentInput::-moz-placeholder {
+    color: #323232;
+  }
+  .comments__section input::placeholder,
+  .comments__section #commentInput::placeholder {
+    color: #323232;
+  }
+  .comments__section #commentInput {
+    height: 19vh;
+  }
+  .comments__section .comments__list {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .comments__section .default-comments__block {
+    display: flex;
+  }
+  .comments__section .default-comments__avatar {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2c3e50;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+  .comments__section .default-comments__details {
+    margin-left: 5px;
+  }
+  .comments__section .default-comments__name-and-date {
+    display: flex;
+    justify-content: space-between;
+  }
+  .comments__section .default-comments__name {
+    font-weight: bold;
+  }
+  .comments__section .default-comments__date {
+    font-style: italic;
+    color: #777;
+    font-size: 0.85em;
+    margin-top: 5px;
+    margin-top: 18px;
+  }
+  .comments__section .default-comments__text {
+    margin: 0;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #323232;
+  }
+  .comments__section .default-comments__divider {
+    height: 1px;
+    background-color: #E1E1E1;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .contact {
+    position: relative;
+    padding: 1.5rem;
+    margin: 0 auto;
+    background-color: #323232;
+  }
+  .contact .contact__description,
+  .contact .contact__social-media,
+  .contact .contact__addresses,
+  .contact .contact__logo {
+    padding-left: 1.5rem;
+  }
+  .contact .contact__description {
+    display: flex;
+  }
+  .contact .contact__title {
+    padding-top: 2rem;
+    margin: 0;
+    font-size: 1.25rem;
+    color: #FFFFFF;
+    line-height: 2rem;
+    font-weight: 600;
+  }
+  .contact .contact__media {
+    padding-bottom: 1.5rem;
+    padding-top: 1.25rem;
+    margin-left: 2rem;
+    font-size: 1.25rem;
+    color: #FFFFFF;
+    line-height: 2rem;
+    font-weight: 600;
+  }
+  .contact .contact__logo {
+    margin-left: auto;
+    margin-right: 1.5rem;
+  }
+  .contact .contact__media-item {
+    margin-right: 1rem;
+  }
+  .contact .contact__addresses {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #323232;
+    color: #fff;
+  }
+  .contact .contact__addresses .address {
+    flex: 1 1 30%;
+  }
+  .contact .contact__addresses .address__info, .contact .contact__addresses .address__name, .contact .contact__addresses .address__location, .contact .contact__addresses .address__role {
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+  }
+  .contact .contact__addresses a.address__email {
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+    font-size: 0.75rem;
+  }
+  .contact .footer__logo {
+    position: absolute;
+    left: 79%;
+    bottom: 93%;
+  }
+  .contact .contact__copyright {
+    padding-left: 1.5rem;
+    font-size: 0.75rem;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+    color: #fff;
+  }
+}
 @media (min-width: 1280px) {
   .header {
     background-color: #313131;
@@ -371,10 +729,12 @@
   }
   .header .nav {
     display: flex;
+    width: 100%;
   }
   .header .nav__logo {
     padding-left: 3rem;
-    padding-right: 2.25rem;
+    padding-top: 1rem;
+    margin: 0;
   }
   .header .nav__list {
     display: flex;
@@ -464,7 +824,7 @@
     margin-bottom: 0.5em;
     line-height: 1.5;
     margin-left: 0;
-    font-size: 1.25rem;
+    font-size: 1.8rem;
   }
   .about__quote figcaption {
     margin-top: 1.5rem;
@@ -484,6 +844,7 @@
     font-size: 0.875rem;
     font-weight: 400;
     margin-top: 0;
+    color: rgba(0, 0, 0, 0.5);
   }
   .about__text > p {
     width: 48%;
@@ -493,9 +854,8 @@
   .gallery {
     margin: 0 auto;
     background-color: #fafafa;
-    padding-right: 2.25rem;
   }
-  .gallery__title, .gallery__title {
+  .gallery__title {
     padding: 3rem 0 2.25rem 2.25rem;
     margin: 0;
     font-size: 1.5rem;
@@ -508,7 +868,6 @@
     flex-wrap: wrap;
     gap: 10px;
     padding-left: 2.25rem;
-    padding-right: 2.25rem;
     width: 100%;
   }
   .gallery__image {
@@ -530,6 +889,7 @@
   .comments__section .comment__block {
     display: flex;
     justify-content: center;
+    margin-right: 26px;
   }
   .comments__section .comment__avatar {
     flex-shrink: 0;
@@ -549,8 +909,6 @@
     margin: 0 auto;
     height: 1px;
     background-color: #E1E1E1;
-    margin-top: 10px;
-    margin-bottom: 10px;
   }
   .comments__section .comments__container .comment__form {
     margin-right: 11px;
@@ -587,7 +945,6 @@
     border-radius: 5px;
     margin-bottom: 14px;
     text-transform: uppercase;
-    margin-left: 87%;
   }
   .comments__section .comments__container .comment__form button:hover {
     background-color: #000;
@@ -614,7 +971,6 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 10px;
     background-color: #2c3e50;
     justify-content: center;
     align-items: center;
@@ -676,366 +1032,10 @@
   }
   .contact .contact__media {
     padding-bottom: 1.5rem;
-    padding-top: 2rem;
-    margin-left: 2rem;
-    font-size: 1.25rem;
-    color: #ffffff;
-    line-height: 2rem;
-    font-weight: 600;
-  }
-  .contact .contact__logo {
-    margin-left: auto;
-    margin-right: 1.5rem;
-  }
-  .contact .contact__media-item {
-    margin-right: 1rem;
-  }
-  .contact .contact__addresses {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: #323232;
-    color: #fff;
-  }
-  .contact .contact__addresses .address {
-    flex: 1 1 30%;
-  }
-  .contact .contact__addresses .address__info, .contact .contact__addresses .address__name, .contact .contact__addresses .address__location, .contact .contact__addresses .address__role {
-    margin-top: 2.25rem;
-    margin-bottom: 2.25rem;
-    font-size: 0.75rem;
-    line-height: 1.25rem;
-    font-weight: 400;
-  }
-  .contact .contact__addresses a.address__email {
-    text-decoration: none;
-    color: #fff;
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-    font-weight: 400;
-    font-size: 0.75rem;
-  }
-  .contact .contact__copyright {
-    padding-left: 1.5rem;
-    font-size: 0.75rem;
-    padding-top: 2rem;
-    padding-bottom: 1.5rem;
-    color: #fff;
-  }
-}
-@media (min-width: 768px) and (max-width: 1279px) {
-  /* Header*/
-  .header {
     padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    display: flex;
-    background-color: #313131;
-  }
-  .header .nav {
-    display: flex;
-  }
-  .header .nav__logo {
-    padding-left: 1.5rem;
-    padding-right: 1.125rem;
-  }
-  .header .nav__list {
-    display: flex;
-    list-style: none;
-  }
-  .header .nav__list-item {
-    padding-right: 1.25rem;
-  }
-  .header .nav__list-item a {
-    font-size: 0.875rem;
-    position: relative;
-    text-decoration: none;
-    color: #FAFAFA;
-    display: inline-block;
-  }
-  .header .nav__list-item a::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #fff;
-    transition: width 0.3s ease;
-  }
-  .header .nav__list-item a.active {
-    color: #fff;
-  }
-  .header .nav__list-item a:hover::after, .header .nav__list-item a.active::after {
-    width: 100%;
-  }
-  .band__banner {
-    background-image: url(../Assets/Images/hero-bio.jpg);
-    height: 100vh;
-    background-size: cover;
-    position: relative;
-  }
-  .band__banner-title {
-    position: absolute;
-    top: 45%;
-    font-size: 3.75rem;
-    line-height: 4.25rem;
-    font-weight: 700;
-    color: #FFFFFF;
-    padding-left: 2.25rem;
-  }
-  .about {
-    display: flex;
-    flex-direction: column;
-    max-width: 72%;
-    margin: auto;
-    padding: 0;
-  }
-  .about__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .about__musicians-image {
-    background-image: url(../Assets/Images/band.jpg);
-    height: 65vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 0;
-  }
-  .about__title {
-    flex-basis: 100%;
-    text-align: left;
-    padding-bottom: 2rem;
-    padding-top: 2.5rem;
-    padding-left: 2.25rem;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    font-weight: 600;
-    margin: 0;
-  }
-  .about__quote {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-  .about__quote blockquote {
-    font-style: italic;
-    margin-bottom: 0.5em;
-    line-height: 1.5;
-    margin-left: 0;
-    font-size: 1.25rem;
-  }
-  .about__quote figcaption {
-    margin-top: 1.5rem;
-    font-style: normal;
-    font-weight: bold;
-  }
-  .about__content {
-    display: flex;
-    justify-content: space-between;
-  }
-  .about .about__text {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-right: 2rem;
-    line-height: 1.25rem;
-    font-size: 0.875rem;
-    font-weight: 400;
-    margin-top: 0;
-  }
-  .about .about__text > p {
-    width: 48%;
-    text-align: left;
-    margin-bottom: 1em;
-  }
-  .about .about__title2 {
-    font-size: 1.125rem;
-    padding: 1.5rem 0 1rem;
-  }
-  .gallery {
-    margin: 0 auto;
-    background-color: #FAFAFA;
-    padding-right: 2.25rem;
-    padding-left: 2.25rem;
-  }
-  .gallery__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  .gallery__image {
-    flex: 1 1 calc(33.333% - 10px);
-    max-width: calc(33.333% - 10px);
-    margin-bottom: 1rem;
-  }
-  .gallery__title {
-    padding: 3rem 0 0;
-    margin: 0;
-    font-size: 1.5rem;
-    line-height: 2rem;
-    font-weight: 600;
-    color: #323232;
-  }
-  .comments__section {
-    border-radius: 5px;
-  }
-  .comments__section h3 {
-    text-align: left;
-    font-size: 24px;
-    margin-bottom: 1rem;
-    line-height: 2rem;
-    font-weight: 600;
-    padding-left: 2.25rem;
-  }
-  .comments__section .comment__block {
-    display: flex;
-    justify-content: center;
-  }
-  .comments__section .comment__avatar {
-    flex-shrink: 0;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 13px;
-    overflow: hidden;
-    margin-top: 20px;
-  }
-  .comments__section .comment__avatar img {
-    width: 100%;
-    height: auto;
-  }
-  .comments__section .comments__container .comment__form {
-    margin-right: 11px;
-    margin-left: 14px;
-    width: 59vw;
-    margin: 0 auto;
-  }
-  .comments__section .comments__container .comment__form label {
-    display: block;
-    margin-bottom: 0.2rem;
-    font-size: 0.9rem;
-    line-height: 20px;
-    text-transform: uppercase;
-    color: #AFAFAF;
-  }
-  .comments__section .comments__container .comment__form input[type=text],
-  .comments__section .comments__container .comment__form textarea {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #E1E1E1;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #f9f9f9;
-  }
-  .comments__section .comments__container .comment__form button {
-    background-color: #323232;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    margin-left: 72%;
-  }
-  .comments__section .comments__container .comment__form button:hover {
-    background-color: #000;
-  }
-  .comments__section input::-moz-placeholder, .comments__section #commentInput::-moz-placeholder {
-    color: #323232;
-  }
-  .comments__section input::placeholder,
-  .comments__section #commentInput::placeholder {
-    color: #323232;
-  }
-  .comments__section #commentInput {
-    height: 19vh;
-  }
-  .comments__section .comments__list {
-    width: 70%;
-    margin: 0 auto;
-  }
-  .comments__section .default-comments__block {
-    display: flex;
-  }
-  .comments__section .default-comments__avatar {
-    flex-shrink: 0;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
-    background-color: #2c3e50;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-top: 20px;
-  }
-  .comments__section .default-comments__details {
-    margin-left: 5px;
-  }
-  .comments__section .default-comments__name-and-date {
-    display: flex;
-    justify-content: space-between;
-  }
-  .comments__section .default-comments__name {
-    font-weight: bold;
-  }
-  .comments__section .default-comments__date {
-    font-style: italic;
-    color: #777;
-    font-size: 0.85em;
-    margin-top: 5px;
-    margin-top: 18px;
-  }
-  .comments__section .default-comments__text {
-    margin: 0;
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: 400;
-    color: #323232;
-  }
-  .comments__section .default-comments__divider {
-    height: 1px;
-    background-color: #E1E1E1;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .contact {
-    padding: 1.5rem;
-    margin: 0 auto;
-    background-color: #323232;
-  }
-  .contact .contact__description,
-  .contact .contact__social-media,
-  .contact .contact__addresses,
-  .contact .contact__logo {
-    padding-left: 1.5rem;
-  }
-  .contact .contact__description {
-    display: flex;
-  }
-  .contact .contact__title {
-    padding-top: 2rem;
-    margin: 0;
-    font-size: 1.25rem;
-    color: #FFFFFF;
-    line-height: 2rem;
-    font-weight: 600;
-  }
-  .contact .contact__media {
-    padding-bottom: 1.5rem;
-    padding-top: 2rem;
     margin-left: 2rem;
     font-size: 1.25rem;
-    color: #FFFFFF;
+    color: #ffffff;
     line-height: 2rem;
     font-weight: 600;
   }
@@ -1047,6 +1047,7 @@
     margin-right: 1rem;
   }
   .contact .contact__addresses {
+    position: relative;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -1070,6 +1071,11 @@
     line-height: 1.375rem;
     font-weight: 400;
     font-size: 0.75rem;
+  }
+  .contact .footer__logo {
+    position: absolute;
+    left: 79%;
+    bottom: 104%;
   }
   .contact .contact__copyright {
     padding-left: 1.5rem;
