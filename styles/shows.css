@@ -47,16 +47,46 @@
   background-image: url(../Assets/Images/Photo-gallery-3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 38vh;
+  height: 63vh;
   position: relative;
+}
+.band__banner_subtitle {
+  position: absolute;
+  left: 1.5rem;
+  top: 5%;
+  font-size: 1rem;
+  color: white;
 }
 .band__banner-title {
   position: absolute;
   font-size: 1.875rem;
   line-height: 2.375rem;
-  padding-left: 1rem;
-  top: 26%;
+  padding-left: 1.5rem;
+  top: 9%;
   color: white;
+}
+.band__banner-song {
+  position: absolute;
+  top: 27%;
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+  padding-left: 1.5rem;
+  color: white;
+}
+.band__banner iframe {
+  position: absolute;
+  bottom: 10%;
+  width: 80vw;
+  height: 25vh;
+  left: 1.5rem;
+}
+.band__banner a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+.band__banner a:hover {
+  text-decoration: underline;
 }
 
 /* Footer  */

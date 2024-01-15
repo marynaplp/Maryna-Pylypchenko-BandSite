@@ -51,18 +51,54 @@
     background-image: url(../Assets/Images/Photo-gallery-3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 38vh;
+    height: 63vh;
     position: relative;
+    
+    &_subtitle {
+        position:absolute;
+        left:1.5rem;
+        top:5%;
+        font-size: 1rem; 
+        color: white;
+      }
 
     &-title {
       position: absolute;
       font-size: 1.875rem;
       line-height: 2.375rem;
-      padding-left: 1rem;
-      top: 26%;
+      padding-left: 1.5rem;
+      top: 9%;
       color: white;
     }
+    &-song{
+        position: absolute;
+top:27%;
+font-size: 1.875rem;
+line-height: 2.375rem;
+padding-left: 1.5rem;
+color: white;
+
+    }
+    iframe {
+        position: absolute;
+        bottom: 10%;
+        width: 80vw;
+        height:25vh;
+        left:1.5rem;
+      }
+      
+      a { // Styles for links in the SoundCloud embed attribution
+        color: #cccccc; // Light grey color for the text
+        text-decoration: none;
+        font-size: 0.75rem; // Small font size for the attribution text
+        
+        &:hover {
+          text-decoration: underline; // Underline on hover for links
+        }
+      }
+      
   }
+
    /* Footer  */
    .contact {
     margin: 0 auto;
