@@ -87,13 +87,13 @@ color: white;
         left:1.5rem;
       }
       
-      a { // Styles for links in the SoundCloud embed attribution
-        color: #cccccc; // Light grey color for the text
+      a { 
+        color: #cccccc; 
         text-decoration: none;
-        font-size: 0.75rem; // Small font size for the attribution text
+        font-size: 0.75rem; 
         
         &:hover {
-          text-decoration: underline; // Underline on hover for links
+          text-decoration: underline;
         }
       }
       
@@ -145,6 +145,15 @@ color: white;
     font-weight: bold;
     color: #323232;;
   }
+ 
+  .shows__item:hover {
+
+    background-color: #FAFAFA;
+    cursor: pointer; 
+}
+.shows__item.selected{
+  background-color:#E1E1E1;
+}
 
   .shows__button {
     width:80vw;

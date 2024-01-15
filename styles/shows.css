@@ -132,6 +132,15 @@
   color: #323232;
 }
 
+.shows__item:hover {
+  background-color: #FAFAFA;
+  cursor: pointer;
+}
+
+.shows__item.selected {
+  background-color: #E1E1E1;
+}
+
 .shows__button {
   width: 80vw;
   background-color: #000000;
