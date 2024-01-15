@@ -1,1 +1,133 @@
-/*# sourceMappingURL=shows.css.map */
+.header {
+  background-color: #313131;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .nav__logo {
+  display: block;
+  margin: 0 auto;
+}
+.header .nav__list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+.header .nav__list li.nav__list-item {
+  padding-right: 2.25rem;
+}
+.header .nav__list li.nav__list-item a {
+  position: relative;
+  text-decoration: none;
+  color: #e1e1e1;
+  display: inline-block;
+}
+.header .nav__list li.nav__list-item a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+.header .nav__list li.nav__list-item a.active {
+  color: #fff;
+}
+.header .nav__list li.nav__list-item a:hover::after, .header .nav__list li.nav__list-item a.active::after {
+  width: 100%;
+}
+
+.band__banner {
+  background-image: url(../Assets/Images/Photo-gallery-3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 38vh;
+  position: relative;
+}
+.band__banner-title {
+  position: absolute;
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+  padding-left: 1rem;
+  top: 26%;
+  color: white;
+}
+
+/* Footer  */
+.contact {
+  margin: 0 auto;
+  background-color: #323232;
+  padding: 0;
+  /* Copyright */
+}
+.contact .contact__description {
+  padding-left: 1rem;
+}
+.contact .contact__description .contact__title {
+  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+.contact .contact__description .contact__media {
+  display: flex;
+  gap: 1rem;
+}
+.contact .contact__description .contact__media-item {
+  width: 24px;
+  height: 24px;
+}
+.contact .contact__description .contact__logo {
+  margin-right: 1.5rem;
+  display: none;
+}
+.contact .contact__addresses {
+  justify-content: start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #323232;
+  color: #fff;
+}
+.contact .contact__addresses .address {
+  flex: 1 1 45%;
+  padding-left: 1rem;
+}
+.contact .contact__addresses .address .address__name,
+.contact .contact__addresses .address .address__info,
+.contact .contact__addresses .address .address__location,
+.contact .contact__addresses .address .address__role {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.contact .contact__addresses .address .address__email {
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
+}
+.contact .contact__addresses .address .address__location {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.contact .footer__logo {
+  margin-left: 1rem;
+  margin-top: 5rem;
+}
+.contact .contact__copyright {
+  padding-left: 1.2rem;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  padding-bottom: 0.5rem;
+  color: #fff;
+}/*# sourceMappingURL=shows.css.map */

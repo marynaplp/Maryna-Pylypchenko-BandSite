@@ -1,0 +1,146 @@
+.header {
+    background-color: #313131;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .nav {
+      &__logo {
+        display: block;
+        margin: 0 auto;
+      }
+      &__list {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        li.nav__list-item {
+          padding-right: 2.25rem;
+          a {
+            position: relative;
+            text-decoration: none;
+            color: #e1e1e1;
+            display: inline-block;
+
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 0;
+              height: 2px;
+              bottom: -5px;
+              left: 0;
+              background-color: #fff;
+              transition: width 0.3s ease;
+            }
+            &.active {
+              color: #fff;
+            }
+            &:hover::after,
+            &.active::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .band__banner {
+    background-image: url(../Assets/Images/Photo-gallery-3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 38vh;
+    position: relative;
+
+    &-title {
+      position: absolute;
+      font-size: 1.875rem;
+      line-height: 2.375rem;
+      padding-left: 1rem;
+      top: 26%;
+      color: white;
+    }
+  }
+   /* Footer  */
+   .contact {
+    margin: 0 auto;
+    background-color: #323232;
+    padding: 0;
+
+    .contact__description {
+      padding-left: 1rem;
+
+      .contact__title {
+        padding-bottom: 1rem;
+        padding-top: 1.5rem;
+        color: #ffffff;
+        font-size: 1.25rem;
+        line-height: 2rem;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      .contact__media {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .contact__media-item {
+        width: 24px;
+        height: 24px;
+      }
+
+      .contact__logo {
+        margin-right: 1.5rem;
+        display: none;
+      }
+    }
+    .contact__addresses {
+      justify-content: start;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      background-color: #323232;
+      color: #fff;
+
+      .address {
+        flex: 1 1 45%;
+        padding-left: 1rem;
+
+        .address__name,
+        .address__info,
+        .address__location,
+        .address__role {
+          font-size: 12px;
+          line-height: 20px;
+          font-weight: 600;
+        }
+
+        .address__email {
+          font-size: 12px;
+          text-decoration: none;
+          color: #fff;
+        }
+        .address__location {
+          margin-top: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+    .footer__logo{
+      margin-left:1rem;
+      margin-top: 5rem;
+    }
+    /* Copyright */
+    .contact__copyright {
+      padding-left: 1.2rem;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+      padding-bottom: 0.5rem;
+      color: #fff;
+    }
+  }
+  
