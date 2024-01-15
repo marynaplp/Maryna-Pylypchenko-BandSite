@@ -8,31 +8,52 @@ const shows =[
 
 ];
 
-function createShowElement(show){
+function createShowElement(show) {
+    const showElem = document.createElement("div");
+    showElem.className = "shows__item";
+    showElem.innerHTML = `
+        <div class="shows__info">
+            <label class="shows__date">Date</label>
+            <span class="shows__date-info">${show.date}</span>
+        </div>
+        <div class="shows__info">
+            <label class="shows__place">Venue</label>
+            <span class="shows__place-info">${show.venue}</span>
+        </div>
+        <div class="shows__info">
+            <label class="shows__location">Location</label>
+            <span class="shows__location-info">${show.location}</span>
+        </div>
+        <button class="shows__button">BUY TICKETS</button>
+        <div class="shows__divider"></div>
+    `;
+    showElem.addEventListener("click", () => handleShowClick(showElem));
 
-const showElem=document.createElement("div")
-showElem.className ="show__item";
-showElem.innerHTML=`
-<div class ="shows__info">
-<label class="shows__date">Date</label>
-<span class="shows__date-info">${show.date}</span>
-</div>
-<div class ="shows__info">
-<label class="shows__place">Venue</label>
-<div class="shows__place-info">${show.venue}</span>
-</div>
-<div class ="shows__info">
-<label class="shows__location">Location</label>
-<span class="shows__location-info">${show.location}</span>
-</div>
-<button class="shows__button">BUY TICKETS</button> 
-<div class ="shows__divider"></div>
-`;
-    return showElem 
+
+    // const buyTicketButton = showElem.querySelector(".shows__button");
+    // buyTicketButton.addEventListener("click", handleBuyTicket);
+
+    return showElem;
 }
 
-const showContainer=document.querySelector(".shows__container")
-
-shows.forEach(show=>{
-    showContainer.appendChild(createShowElement(show))
+// function handleBuyTicket(event) {
+//     event.preventDefault();
+//     console.log("Ticket button clicked");
+// }
+function handleShowClick (selectElement){
+document.querySelectorAll(".shows__item.selected").forEach(item=>{
+    item.classList.remove('selected');
 })
+selectElement.classList.add('selected');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const showContainer = document.querySelector(".shows__container");
+    if (showContainer) {
+        shows.forEach(show => {
+            showContainer.appendChild(createShowElement(show));
+        });
+    } else {
+        console.error("showContainer element not found");
+    }
+});
