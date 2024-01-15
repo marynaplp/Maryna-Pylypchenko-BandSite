@@ -27,19 +27,23 @@ function createShowElement(show) {
         <button class="shows__button">BUY TICKETS</button>
         <div class="shows__divider"></div>
     `;
+    showElem.addEventListener("mouseover", onShowItemHover)
+    showElem.addEventListener("mouseout", onShowItemHoverOut)
+
     showElem.addEventListener("click", () => handleShowClick(showElem));
 
 
-    // const buyTicketButton = showElem.querySelector(".shows__button");
-    // buyTicketButton.addEventListener("click", handleBuyTicket);
+    
 
     return showElem;
 }
 
-// function handleBuyTicket(event) {
-//     event.preventDefault();
-//     console.log("Ticket button clicked");
-// }
+function onShowItemHover (event) {
+    event.currentTarget.classList.add("hover-highlight")
+}
+function onShowItemHoverOut (event) {
+    event.currentTarget.classList.remove("hover-highlight")
+}
 function handleShowClick (selectElement){
 document.querySelectorAll(".shows__item.selected").forEach(item=>{
     item.classList.remove('selected');
