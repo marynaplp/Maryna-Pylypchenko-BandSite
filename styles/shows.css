@@ -242,8 +242,6 @@
 @media (min-width: 1280px) {
   .header {
     background-color: #313131;
-    padding-top: 2.25rem;
-    padding-bottom: 2.25rem;
   }
   .header .nav {
     display: flex;
@@ -273,7 +271,7 @@
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -5px;
+    top: 2.8125rem;
     left: 0;
     background-color: #fff;
     transition: width 0.3s ease;
@@ -283,18 +281,48 @@
   }
   .band__banner {
     background-image: url(../Assets/Images/Photo-gallery-3.jpg);
-    height: 100vh;
     background-size: cover;
+    background-repeat: no-repeat;
+    height: 63vh;
     position: relative;
+  }
+  .band__banner_subtitle {
+    position: absolute;
+    left: 1.5rem;
+    top: 2rem;
+    font-size: 1rem;
+    color: white;
   }
   .band__banner-title {
     position: absolute;
-    top: 45%;
-    font-size: 3.75rem;
-    line-height: 4.25rem;
-    font-weight: 700;
-    color: #ffffff;
-    padding-left: 2.25rem;
+    font-size: 1.875rem;
+    line-height: 2.375rem;
+    padding-left: 1.5rem;
+    top: 10rem;
+    color: white;
+  }
+  .band__banner-song {
+    position: absolute;
+    top: 27%;
+    font-size: 1.875rem;
+    line-height: 2.375rem;
+    padding-left: 1.5rem;
+    color: white;
+  }
+  .band__banner iframe {
+    position: absolute;
+    bottom: 10%;
+    width: 80vw;
+    height: 25vh;
+    left: 1.5rem;
+  }
+  .band__banner a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.75rem;
+  }
+  .band__banner a:hover {
+    text-decoration: underline;
   }
   .contact {
     padding: 1.5rem;
@@ -376,8 +404,6 @@
 @media (min-width: 768px) and (max-width: 1279px) {
   /* Header*/
   .header {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
     background-color: #313131;
   }
   .header .nav {
@@ -409,7 +435,7 @@
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -5px;
+    top: 2.8125rem;
     left: 0;
     background-color: #fff;
     transition: width 0.3s ease;
@@ -422,19 +448,85 @@
   }
   .band__banner {
     background-image: url(../Assets/Images/Photo-gallery-3.jpg);
-    height: 100vh;
     background-size: cover;
+    background-repeat: no-repeat;
+    height: 63vh;
     position: relative;
   }
   .band__banner-title {
     position: absolute;
-    top: 45%;
-    font-size: 3.75rem;
-    line-height: 4.25rem;
-    font-weight: 700;
-    color: #ffffff;
-    padding-left: 2.25rem;
+    font-size: 1.875rem;
+    line-height: 2.375rem;
+    padding-left: 1.5rem;
+    color: white;
   }
+  .band__banner-song {
+    position: absolute;
+    top: 27%;
+    font-size: 1.875rem;
+    line-height: 2.375rem;
+    padding-left: 1.5rem;
+    color: white;
+  }
+  .band__banner iframe {
+    position: absolute;
+    bottom: 10%;
+    width: 80vw;
+    height: 25vh;
+    left: 1.5rem;
+  }
+  .band__banner a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.75rem;
+  }
+  .band__banner a:hover {
+    text-decoration: underline;
+  }
+  .shows__container {
+    font-family: "Arial", sans-serif;
+    margin: 0 auto;
+    max-width: 768px;
+  }
+  .shows__header {
+    font-size: 24px;
+    text-align: left;
+    padding: 20px 0;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #000;
+  }
+  /* This ensures each show info block behaves like a table row */
+  .shows__container > div:not(.shows__divider) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  /* Hide labels, as they are only for semantic purposes and not for display */
+  .shows__info label {
+    display: none;
+  }
+  /* Span elements will occupy the space and be in line */
+  .shows__info span {
+    flex: 1;
+  }
+  /* Adjusting the button to not stretch and to align to the end */
+  .shows__button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  /* A divider to separate each show entry */
+  .shows__divider {
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+  }
+  /* Container for the shows list */
   .contact {
     padding: 1.5rem;
     margin: 0 auto;
