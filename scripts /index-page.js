@@ -49,11 +49,11 @@ function displayComment(comment) {
 
   const commentText = document.createElement("p");
   commentText.className = "default-comments__text";
-  commentText.textContent = comment.comment; // Assuming the comment text is in 'comment.comment'
+  commentText.textContent = comment.comment; 
   commentsDetails.appendChild(commentText);
 
   commentBlock.appendChild(commentsDetails);
-  commentSection.prepend(commentBlock); // Add the new comment at the top
+  commentSection.prepend(commentBlock); 
 }
 
 //fetch, sort, display comments
@@ -64,7 +64,7 @@ async function renderComments() {
 
   commentsArray.forEach(comment => displayComment(comment));
 }
-//add event on submit
+
 document.querySelector(".comment__form").addEventListener("submit", async function(event) {
   event.preventDefault();
 //retrive the data
@@ -75,12 +75,11 @@ document.querySelector(".comment__form").addEventListener("submit", async functi
     alert("Name and comment are required.");
     return;
   }
-  //comment that will be sent to the server 
+  //comment  sent to the server 
   const newComment = {
     name: nameInput,
     comment: commentInput
   };
-//posting a new comment 
   try {
     const response = await bandSiteApiObj.postComment(newComment);
     if (response && response.data) {
@@ -92,7 +91,6 @@ document.querySelector(".comment__form").addEventListener("submit", async functi
   } catch (error) {
     console.error("Error posting comment:", error);
   }
-// clear the input fields in a web form
   document.querySelector("#nameInput").value = "";
   document.querySelector("#commentInput").value = "";
 });
