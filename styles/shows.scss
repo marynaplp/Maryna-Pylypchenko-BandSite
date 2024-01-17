@@ -1,5 +1,4 @@
-@use "./partials/mixins" as *;
-@use "./partials/fonts" as *;
+
 .header {
   background-color: #313131;
   padding-top: 1rem;
@@ -109,91 +108,60 @@
 
 }
 
-.shows__container {
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-  margin-top: 1.25rem;
+.show {
+  font-size: 36px;
+  font-weight: 700;
+  margin-left: 0px;
+  margin-bottom: 0;
 }
-
-.shows__header {
-  flex-basis: 100%;
-  text-align: left;
-  font-size: 1.125rem;
-  padding: 1.5rem 1rem 1rem;
+.show-time ul {
+  padding: 0px;
+}
+.show-time__list {
+  border-bottom: 1px solid #e1e1e1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.show-time__div {
+  width: 100%;
+}
+.show-time__div button {
+  background-color: #323232;
+  color: white;
+  width: 100%;
+  border: 1px solid #323232;
+  border-radius: 3px;
+  padding: 15px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.show-time__elements {
+  font-weight: 600;
+  color: #AFAFAF;
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+.show-time_elements__value {
+  font-size: 19px;
+  font-weight: 400;
   color: #323232;
-  margin: 0;
-  line-height: 2rem;
+  margin-top: 10px;
+}
+.show-time_elements__date {
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.show-time_list-selected {
+  background-color: #e1e1e1;
+}
+.show-time .error-message {
+  color: red;
+  text-align: center;
   font-weight: 600;
 }
 
-
-
-.shows__item {
-  margin-bottom: 15px;
-  font-size: 16px;
-
-}
-
-.shows__date,
-.shows__place,
-.shows__location {
-  display: block;
-  color: #AFAFAF;
-  padding-left: 1.5rem;
-  padding-bottom: 0.7rem;
-  padding-top: 1rem;
-  font-size: 1rem;
-
-
-}
-
-.shows__date-info,
-.shows__place-info,
-.shows__location-info {
-  display: block;
-  padding-left: 1.5rem;
-  font-weight: bold;
-  color: #323232;
-  ;
-}
-
-.shows__item:hover {
-
-  background-color: #FAFAFA;
-  cursor: pointer;
-}
-
-.shows__item.selected {
-  background-color: #E1E1E1;
-}
-
-.shows__button {
-  width: 80vw;
-  background-color: #000000;
-  color: #ffffff;
-  text-align: center;
-  padding: 1rem 1rem;
-  text-decoration: none;
-  display: block;
-  border-radius: 8px;
-  margin: 1rem 1.5rem 1rem 1.5rem;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #000;
-  }
-}
-
-.shows__divider {
-  width: 100%;
-
-  //margin-top:0.5rem;
-  height: 1px;
-  background-color: #E1E1E1;
-}
 
 /* Footer  */
 .contact {
@@ -386,7 +354,76 @@
     }
 
   }
-
+/* Container for the shows list */
+.show {
+  font-size: 36px;
+  font-weight: 700;
+  margin-left: 7%;
+  margin-bottom: 0%;
+}
+.show-time__list {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #e1e1e1;
+  flex-direction: row;
+}
+.show-time__elements {
+  font-weight: 600;
+  color: #AFAFAF;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.show-time_list:first-child .show-time_elements {
+  display: block;
+}
+.show-time__list  .show-time__elements{
+  display: none;
+}
+.show-time .show-time_list:first-child .show-time_blank {
+  height: 24px;
+}
+.show-time__div {
+  width: 20%;
+}
+.show-time_div button {
+  background-color: #323232;
+  color: white;
+  width: 100%;
+  border: 1px solid #323232;
+  border-radius: 3px;
+  padding: 8px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.show-time_elements {
+  font-weight: 600;
+  color: #AFAFAF;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.show-time_elements__value {
+  font-size: 20px;
+  font-weight: 400;
+  color: #323232;
+}
+.show-time_list-selected {
+  background-color: #e1e1e1;
+}
+.show-time .error-message {
+  color: red;
+  text-align: center;
+  font-weight: 600;
+}
+.show-time_elements__date {
+  font-size: 20px;
+  font-weight: 600;
+}
+.show-time__list:first-child .show-time__elements {
+  display: block;
+}
+.show-time__list  .show-time__elements{
+  display: none;
+}
   // Footer. Contact block
   .contact {
     padding: 1.5rem;
@@ -589,58 +626,77 @@
     }
 
   }
-//Show block
-.shows__container {
-  font-family: 'Arial', sans-serif;
-  margin: 0 auto;
-  max-width: 768px;
-}
 
-.shows__header {
-  font-size: 24px;
-  text-align: left;
-  padding: 20px 0;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #000;
-}
-
-/* This ensures each show info block behaves like a table row */
-.shows__container > div:not(.shows__divider) {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-}
-
-/* Hide labels, as they are only for semantic purposes and not for display */
-.shows__info label {
-  display: none;
-}
-
-/* Span elements will occupy the space and be in line */
-.shows__info span {
-  flex: 1;
-}
-
-/* Adjusting the button to not stretch and to align to the end */
-.shows__button {
-  padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-/* A divider to separate each show entry */
-.shows__divider {
-  height: 1px;
-  background-color: #ccc;
-  margin: 20px 0;
-}
    /* Container for the shows list */
- 
+   .show {
+    font-size: 36px;
+    font-weight: 700;
+    margin-left: 7%;
+    margin-bottom: 0%;
+  }
+  .show-time__list {
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: 1px solid #e1e1e1;
+    flex-direction: row;
+  }
+  .show-time__elements {
+    font-weight: 600;
+    color: #AFAFAF;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .show-time_list:first-child .show-time_elements {
+    display: block;
+  }
+  .show-time__list  .show-time__elements{
+    display: none;
+  }
+  .show-time .show-time_list:first-child .show-time_blank {
+    height: 24px;
+  }
+  .show-time__div {
+    width: 20%;
+  }
+  .show-time_div button {
+    background-color: #323232;
+    color: white;
+    width: 100%;
+    border: 1px solid #323232;
+    border-radius: 3px;
+    padding: 8px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .show-time_elements {
+    font-weight: 600;
+    color: #AFAFAF;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .show-time_elements__value {
+    font-size: 20px;
+    font-weight: 400;
+    color: #323232;
+  }
+  .show-time_list-selected {
+    background-color: #e1e1e1;
+  }
+  .show-time .error-message {
+    color: red;
+    text-align: center;
+    font-weight: 600;
+  }
+  .show-time_elements__date {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .show-time__list:first-child .show-time__elements {
+    display: block;
+  }
+  .show-time__list  .show-time__elements{
+    display: none;
+  }
   // Footer. Contact block
   .contact {
     padding: 1.5rem;
@@ -735,3 +791,4 @@
     }
   }
 }
+
