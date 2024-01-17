@@ -34,13 +34,18 @@ class BandSiteApi {
     async getShows(){
         try {
             const response=await axios.get(
-                `${this.baseUrl}showdates?apiKey=${this.apiKey}`
+                `${this.baseUrl}showdates?api_key=${this.apiKey}`
                 )
+                const shows = response.data.map(show => ({
+                    date: new Date(show.date).toDateString(),
+                    venue: show.place,
+                    location: show.location,
+                }));
         
-            return response.data;
+            return shows;
        
         } catch (error) {
-            console.error('Error posting comment:', error)
+            console.error('Error fetching shows:', error)
             
         }
     }
