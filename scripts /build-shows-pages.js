@@ -44,15 +44,33 @@ function createShowElement(show) {
     locationDiv.appendChild(locationTitle);
     locationDiv.appendChild(locationValue);
 
+ 
 
     listItem.appendChild(dateDiv);
     listItem.appendChild(venueDiv);
     listItem.appendChild(locationDiv);
 
+    // manage hover
+
+    listItem.addEventListener("mouseover", onShowItemHover)
+    listItem.addEventListener("mouseout", onShowItemHoverOut)
+  //Manage the hover and selected item
+  listItem.addEventListener('click', function(){
+    document.querySelectorAll(".show-time__list.selected").forEach(item=>{
+        item.classList.remove("selected")
+    })
+    listItem.classList.add("selected");
+  })
   
     return listItem;
 }
-
+//handle hover and click events on each show item.
+function onShowItemHover (event) {
+    event.currentTarget.classList.add("hover-highlight")
+}
+function onShowItemHoverOut (event) {
+    event.currentTarget.classList.remove("hover-highlight")
+}
 // Fetch shows and update the DOM
 async function fetchAndDisplayShows() {
     try {
