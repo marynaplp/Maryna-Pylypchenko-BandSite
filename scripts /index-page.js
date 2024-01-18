@@ -1,22 +1,18 @@
 import BandSiteApi from "./band-site-api.js";
-//api
 const bandSiteApiObj = new BandSiteApi("a08fc5ed-910b-404f-aa2a-5a5bd255e5b6");
-//array of the comments to store 
 let commentsArray = [];
 document.addEventListener("DOMContentLoaded", async () => {
   await renderComments();
 });
-//clean comments
 function clearComments() {
   const commentSection = document.querySelector(".comments__list");
   if (commentSection) {
-      commentSection.innerHTML = "";
+    commentSection.innerHTML = "";
   } else {
-      console.error("Element with class 'comments__list' not found");
+    console.error("Element with class 'comments__list' not found");
   }
 }
 
-//Display default comments
 function displayComment(comment) {
   const commentSection = document.querySelector(".comments__list");
 
@@ -25,8 +21,8 @@ function displayComment(comment) {
 
   const avatarDiv = document.createElement("div");
   avatarDiv.className = "default-comments__avatar";
-  
-  avatarDiv.style.backgroundImage = "url('path_to_placeholder_image')";
+
+  avatarDiv.style.backgroundImage = "";
   commentBlock.appendChild(avatarDiv);
 
   const commentsDetails = document.createElement("div");
@@ -42,56 +38,61 @@ function displayComment(comment) {
 
   const spanDate = document.createElement("span");
   spanDate.className = "default-comments__date";
-  spanDate.textContent = new Date(comment.timestamp).toLocaleDateString("en-US");;
+  spanDate.textContent = new Date(comment.timestamp).toLocaleDateString(
+    "en-US"
+  );
   nameDateDiv.appendChild(spanDate);
 
   commentsDetails.appendChild(nameDateDiv);
 
   const commentText = document.createElement("p");
   commentText.className = "default-comments__text";
-  commentText.textContent = comment.comment; 
+  commentText.textContent = comment.comment;
   commentsDetails.appendChild(commentText);
 
+  const divider = document.createElement("div");
+  divider.className = "default-comments__divider";
+  commentsDetails.appendChild(divider);
+
   commentBlock.appendChild(commentsDetails);
-  commentSection.prepend(commentBlock); 
+  commentSection.prepend(commentBlock);
 }
 
-//fetch, sort, display comments
 async function renderComments() {
   clearComments();
   const commentsArray = await bandSiteApiObj.getComments();
   commentsArray.sort((a, b) => a.timestamp - b.timestamp);
 
-  commentsArray.forEach(comment => displayComment(comment));
+  commentsArray.forEach((comment) => displayComment(comment));
 }
 
-document.querySelector(".comment__form").addEventListener("submit", async function(event) {
-  event.preventDefault();
-//retrive the data
-  const nameInput = document.getElementById("nameInput").value;
+document
+  .querySelector(".comment__form")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault();
+    const nameInput = document.getElementById("nameInput").value;
     const commentInput = document.getElementById("commentInput").value;
 
-  if (!nameInput || !commentInput) {
-    alert("Name and comment are required.");
-    return;
-  }
-  //comment  sent to the server 
-  const newComment = {
-    name: nameInput,
-    comment: commentInput
-  };
-  try {
-    const response = await bandSiteApiObj.postComment(newComment);
-    if (response && response.data) {
-      commentsArray.unshift(response.data);
-      renderComments();
-    } else {
-      console.error("No data returned from postComment");
+    if (!nameInput || !commentInput) {
+      alert("Name and comment are required.");
+      return;
     }
-  } catch (error) {
-    console.error("Error posting comment:", error);
-  }
-  document.querySelector("#nameInput").value = "";
-  document.querySelector("#commentInput").value = "";
-});
-renderComment()
+    const newComment = {
+      name: nameInput,
+      comment: commentInput,
+    };
+    try {
+      const response = await bandSiteApiObj.postComment(newComment);
+      if (response && response.data) {
+        commentsArray.unshift(response.data);
+        renderComments();
+      } else {
+        console.error("No data returned from postComment");
+      }
+    } catch (error) {
+      console.error("Error posting comment:", error);
+    }
+    document.querySelector("#nameInput").value = "";
+    document.querySelector("#commentInput").value = "";
+  });
+renderComment();
