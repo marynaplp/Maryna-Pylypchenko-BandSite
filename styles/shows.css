@@ -1,31 +1,31 @@
-.header {
-  background-color: #313131;
+header {
+  background-color: #323232;
   padding-top: 1rem;
   padding-bottom: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.header .nav__logo {
+header .nav__logo {
   display: block;
   margin: 0 auto;
 }
-.header .nav__list {
+header .nav__list {
   display: flex;
   list-style: none;
   justify-content: center;
   align-items: center;
 }
-.header .nav__list li.nav__list-item {
+header .nav__list li.nav__list-item {
   padding-right: 2.25rem;
 }
-.header .nav__list li.nav__list-item a {
+header .nav__list li.nav__list-item a {
   position: relative;
   text-decoration: none;
   color: #e1e1e1;
   display: inline-block;
 }
-.header .nav__list li.nav__list-item a::after {
+header .nav__list li.nav__list-item a::after {
   content: "";
   display: block;
   position: absolute;
@@ -36,49 +36,38 @@
   background-color: #fff;
   transition: width 0.3s ease;
 }
-.header .nav__list li.nav__list-item a.active {
+header .nav__list li.nav__list-item a.active {
   color: #fff;
 }
-.header .nav__list li.nav__list-item a:hover::after, .header .nav__list li.nav__list-item a.active::after {
+header .nav__list li.nav__list-item a:hover::after, header .nav__list li.nav__list-item a.active::after {
   width: 100%;
 }
 
 .band__banner {
-  background-image: url(../Assets/Images/Photo-gallery-3.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.285), rgba(0, 0, 0, 0.336)), url(../Assets/Images/hero-shows.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 63vh;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
-.band__banner_subtitle {
-  position: absolute;
-  left: 1.5rem;
-  top: 5%;
-  font-size: 1rem;
+.band__banner-heading {
+  width: 88%;
+  padding-left: 6%;
+}
+.band__banner-tagline {
+  font-size: 24px;
   color: white;
+  font-weight: 700;
 }
 .band__banner-title {
-  position: absolute;
-  font-size: 1.875rem;
-  line-height: 2.375rem;
-  padding-left: 1.5rem;
-  top: 9%;
+  font-size: 36px;
+  font-weight: 700;
   color: white;
 }
-.band__banner-song {
-  position: absolute;
-  top: 27%;
-  font-size: 1.875rem;
-  line-height: 2.375rem;
-  padding-left: 1.5rem;
-  color: white;
-}
-.band__banner iframe {
-  position: absolute;
-  bottom: 10%;
-  width: 80vw;
-  height: 25vh;
-  left: 1.5rem;
+.band__banner-soundcloud {
+  width: 88%;
+  margin-left: 6%;
+  margin-bottom: 10%;
 }
 .band__banner a {
   color: #cccccc;
@@ -96,21 +85,15 @@
   margin-bottom: 0;
 }
 
-.show-time ul {
-  padding: 0px;
-}
-
 .show-time__list {
   border-bottom: 1px solid #e1e1e1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-
 .show-time__div {
   width: 100%;
 }
-
 .show-time__div button {
   background-color: #323232;
   color: white;
@@ -121,35 +104,25 @@
   font-weight: 600;
   margin-bottom: 20px;
 }
-
 .show-time__elements {
   font-weight: 600;
   color: #AFAFAF;
   font-size: 13px;
   margin-bottom: 0px;
 }
-
-.show-time_elements__value {
+.show-time__elements__value {
   font-size: 19px;
   font-weight: 400;
   color: #323232;
   margin-top: 10px;
 }
-
-.show-time_elements__date {
+.show-time__elements__date {
   font-size: 19px;
   font-weight: 600;
   margin-top: 10px;
 }
-
-.show-time_list-selected {
+.show-time__list-selected {
   background-color: #e1e1e1;
-}
-
-.show-time .error-message {
-  color: red;
-  text-align: center;
-  font-weight: 600;
 }
 
 /* Footer  */
@@ -267,41 +240,29 @@
     width: 100%;
   }
   .band__banner {
-    background-image: url(../Assets/Images/Photo-gallery-3.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.388), rgba(0, 0, 0, 0.347)), url(../Assets/Images/hero-shows.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 63vh;
-    position: relative;
-  }
-  .band__banner_subtitle {
-    position: absolute;
-    left: 1.5rem;
-    top: 2rem;
-    font-size: 1rem;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     color: white;
+  }
+  .band__banner-heading {
+    width: 70%;
+  }
+  .band__banner-tagline {
+    font-size: 24px;
+    font-weight: 700;
   }
   .band__banner-title {
-    position: absolute;
-    font-size: 1.875rem;
-    line-height: 2.375rem;
-    padding-left: 1.5rem;
-    top: 10rem;
-    color: white;
+    font-size: 60px;
+    font-weight: 700;
   }
-  .band__banner-song {
-    position: absolute;
-    top: 27%;
-    font-size: 1.875rem;
-    line-height: 2.375rem;
-    padding-left: 1.5rem;
-    color: white;
-  }
-  .band__banner iframe {
-    position: absolute;
-    bottom: 10%;
-    width: 80vw;
-    height: 25vh;
-    left: 1.5rem;
+  .band__banner-soundcloud {
+    margin-left: 6%;
+    width: 50%;
   }
   .band__banner a {
     color: #cccccc;
@@ -311,7 +272,6 @@
   .band__banner a:hover {
     text-decoration: underline;
   }
-  /* Container for the shows list */
   .show {
     font-size: 36px;
     font-weight: 700;
@@ -325,27 +285,20 @@
     flex-direction: row;
   }
   .show-time__elements {
-    font-weight: 600;
-    color: #AFAFAF;
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  .show-time_list:first-child .show-time_elements {
-    display: block;
-  }
-  .show-time__list .show-time__elements {
     display: none;
   }
-  .show-time .show-time_list:first-child .show-time_blank {
+  .show-time__list:first-child .show-time__elements {
+    display: block;
+  }
+  .show-time__list:first-child__list:first-child .show-time_blank {
     height: 24px;
   }
   .show-time__div {
     width: 20%;
   }
-  .show-time_div button {
+  .show-time__div__button {
     background-color: #323232;
     color: white;
-    width: 100%;
     border: 1px solid #323232;
     border-radius: 3px;
     padding: 8px;
@@ -363,23 +316,12 @@
     font-weight: 400;
     color: #323232;
   }
-  .show-time_list-selected {
-    background-color: #e1e1e1;
-  }
-  .show-time .error-message {
-    color: red;
-    text-align: center;
-    font-weight: 600;
-  }
   .show-time_elements__date {
     font-size: 20px;
     font-weight: 600;
   }
-  .show-time__list:first-child .show-time__elements {
-    display: block;
-  }
-  .show-time__list .show-time__elements {
-    display: none;
+  .show-time_list-selected {
+    background-color: #e1e1e1;
   }
   .contact {
     padding: 1.5rem;
@@ -426,6 +368,7 @@
     flex-wrap: wrap;
     background-color: #323232;
     color: #fff;
+    flex-direction: row;
   }
   .contact .contact__addresses .address {
     flex: 1 1 30%;
@@ -483,7 +426,7 @@
     font-size: 0.875rem;
     position: relative;
     text-decoration: none;
-    color: #FAFAFA;
+    color: #fafafa;
     display: inline-block;
   }
   .header .nav__list-item a::after {
@@ -504,33 +447,29 @@
     width: 100%;
   }
   .band__banner {
-    background-image: url(../Assets/Images/Photo-gallery-3.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.388), rgba(0, 0, 0, 0.347)), url(../Assets/Images/hero-shows.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 63vh;
-    position: relative;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+  }
+  .band__banner-heading {
+    width: 70%;
+  }
+  .band__banner-tagline {
+    font-size: 24px;
+    font-weight: 700;
   }
   .band__banner-title {
-    position: absolute;
-    font-size: 1.875rem;
-    line-height: 2.375rem;
-    padding-left: 1.5rem;
-    color: white;
+    font-size: 60px;
+    font-weight: 700;
   }
-  .band__banner-song {
-    position: absolute;
-    top: 27%;
-    font-size: 1.875rem;
-    line-height: 2.375rem;
-    padding-left: 1.5rem;
-    color: white;
-  }
-  .band__banner iframe {
-    position: absolute;
-    bottom: 10%;
-    width: 80vw;
-    height: 25vh;
-    left: 1.5rem;
+  .band__banner-soundcloud {
+    margin-left: 6%;
+    width: 50%;
   }
   .band__banner a {
     color: #cccccc;
@@ -554,27 +493,20 @@
     flex-direction: row;
   }
   .show-time__elements {
-    font-weight: 600;
-    color: #AFAFAF;
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  .show-time_list:first-child .show-time_elements {
-    display: block;
-  }
-  .show-time__list .show-time__elements {
     display: none;
   }
-  .show-time .show-time_list:first-child .show-time_blank {
+  .show-time__list:first-child .show-time__elements {
+    display: block;
+  }
+  .show-time__list:first-child__list:first-child .show-time_blank {
     height: 24px;
   }
   .show-time__div {
     width: 20%;
   }
-  .show-time_div button {
+  .show-time__div__button {
     background-color: #323232;
     color: white;
-    width: 100%;
     border: 1px solid #323232;
     border-radius: 3px;
     padding: 8px;
@@ -592,23 +524,12 @@
     font-weight: 400;
     color: #323232;
   }
-  .show-time_list-selected {
-    background-color: #e1e1e1;
-  }
-  .show-time .error-message {
-    color: red;
-    text-align: center;
-    font-weight: 600;
-  }
   .show-time_elements__date {
     font-size: 20px;
     font-weight: 600;
   }
-  .show-time__list:first-child .show-time__elements {
-    display: block;
-  }
-  .show-time__list .show-time__elements {
-    display: none;
+  .show-time_list-selected {
+    background-color: #e1e1e1;
   }
   .contact {
     padding: 1.5rem;
@@ -617,7 +538,6 @@
   }
   .contact .contact__description,
   .contact .contact__social-media,
-  .contact .contact__addresses,
   .contact .contact__logo {
     padding-left: 1.5rem;
   }
@@ -651,6 +571,7 @@
   .contact .contact__addresses {
     position: relative;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     background-color: #323232;

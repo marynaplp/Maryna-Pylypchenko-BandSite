@@ -1,6 +1,8 @@
+@use "./partials/mixins" as *;
 
-.header {
-  background-color: #313131;
+
+header {
+  background-color: $bandsite-black;
   padding-top: 1rem;
   padding-bottom: 1rem;
   display: flex;
@@ -25,7 +27,7 @@
         a {
           position: relative;
           text-decoration: none;
-          color: #e1e1e1;
+          color: $mercury;
           display: inline-block;
 
           &::after {
@@ -55,45 +57,34 @@
 }
 
 .band__banner {
-  background-image: url(../Assets/Images/Photo-gallery-3.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.285), rgba(0, 0, 0, 0.336)),
+    url(../Assets/Images/hero-shows.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 63vh;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 
-  &_subtitle {
-    position: absolute;
-    left: 1.5rem;
-    top: 5%;
-    font-size: 1rem;
+  &-heading {
+    width: 88%;
+    padding-left: 6%;
+  }
+
+  &-tagline {
+    font-size: 24px;
     color: white;
+    font-weight: 700;
   }
 
   &-title {
-    position: absolute;
-    font-size: 1.875rem;
-    line-height: 2.375rem;
-    padding-left: 1.5rem;
-    top: 9%;
+    font-size: 36px;
+    font-weight: 700;
     color: white;
   }
 
-  &-song {
-    position: absolute;
-    top: 27%;
-    font-size: 1.875rem;
-    line-height: 2.375rem;
-    padding-left: 1.5rem;
-    color: white;
-
-  }
-
-  iframe {
-    position: absolute;
-    bottom: 10%;
-    width: 80vw;
-    height: 25vh;
-    left: 1.5rem;
+  &-soundcloud {
+    width: 88%;
+    margin-left: 6%;
+    margin-bottom: 10%;
   }
 
   a {
@@ -105,7 +96,6 @@
       text-decoration: underline;
     }
   }
-
 }
 
 .show {
@@ -114,59 +104,59 @@
   margin-left: 0px;
   margin-bottom: 0;
 }
-.show-time ul {
-  padding: 0px;
-}
-.show-time__list {
-  border-bottom: 1px solid #e1e1e1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.show-time__div {
-  width: 100%;
-}
-.show-time__div button {
-  background-color: #323232;
-  color: white;
-  width: 100%;
-  border: 1px solid #323232;
-  border-radius: 3px;
-  padding: 15px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-.show-time__elements {
-  font-weight: 600;
-  color: #AFAFAF;
-  font-size: 13px;
-  margin-bottom: 0px;
-}
-.show-time_elements__value {
-  font-size: 19px;
-  font-weight: 400;
-  color: #323232;
-  margin-top: 10px;
-}
-.show-time_elements__date {
-  font-size: 19px;
-  font-weight: 600;
-  margin-top: 10px;
-}
-.show-time_list-selected {
-  background-color: #e1e1e1;
-}
-.show-time .error-message {
-  color: red;
-  text-align: center;
-  font-weight: 600;
-}
 
+.show-time {
+  &__list {
+    border-bottom: 1px solid $mercury;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__div {
+    width: 100%;
+
+    button {
+      background-color: $bandsite-black;
+      color: white;
+      width: 100%;
+      border: 1px solid $bandsite-black;
+      border-radius: 3px;
+      padding: 15px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__elements {
+    font-weight: 600;
+    color: $silver;
+    font-size: 13px;
+    margin-bottom: 0px;
+
+    &__value {
+      font-size: 19px;
+      font-weight: 400;
+      color: $bandsite-black;
+      margin-top: 10px;
+    }
+
+    &__date {
+      font-size: 19px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+  }
+
+  &__list-selected {
+    background-color: $mercury;
+  }
+}
 
 /* Footer  */
 .contact {
   margin: 0 auto;
-  background-color: #323232;
+  background-color: $bandsite-black;
   padding: 0;
   margin-top: 1rem;
 
@@ -204,7 +194,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    background-color: #323232;
+    background-color: $bandsite-black;
     color: #fff;
 
     .address {
@@ -250,7 +240,8 @@
 }
 
 //Destop
-@media (min-width: 1280px) {
+
+@include desktop {
   .header {
     background-color: #313131;
     //  padding-top: 2.25rem;
@@ -302,45 +293,36 @@
   }
 
   .band__banner {
-    background-image: url(../Assets/Images/Photo-gallery-3.jpg);
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.388),
+        rgba(0, 0, 0, 0.347)
+      ),
+      url(../Assets/Images/hero-shows.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 63vh;
-    position: relative;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
 
-    &_subtitle {
-      position: absolute;
-      left: 1.5rem;
-      top: 2rem;
-      font-size: 1rem;
-      color: white;
+    &-heading {
+      width: 70%;
+    }
+
+    &-tagline {
+      font-size: 24px;
+      font-weight: 700;
     }
 
     &-title {
-      position: absolute;
-      font-size: 1.875rem;
-      line-height: 2.375rem;
-      padding-left: 1.5rem;
-      top: 10rem;
-      color: white;
+      font-size: 60px;
+      font-weight: 700;
     }
 
-    &-song {
-      position: absolute;
-      top: 27%;
-      font-size: 1.875rem;
-      line-height: 2.375rem;
-      padding-left: 1.5rem;
-      color: white;
-
-    }
-
-    iframe {
-      position: absolute;
-      bottom: 10%;
-      width: 80vw;
-      height: 25vh;
-      left: 1.5rem;
+    &-soundcloud {
+      margin-left: 6%;
+      width: 50%;
     }
 
     a {
@@ -352,83 +334,81 @@
         text-decoration: underline;
       }
     }
-
   }
-/* Container for the shows list */
-.show {
-  font-size: 36px;
-  font-weight: 700;
-  margin-left: 7%;
-  margin-bottom: 0%;
-}
-.show-time__list {
-  display: flex;
-  justify-content: space-evenly;
-  border-bottom: 1px solid #e1e1e1;
-  flex-direction: row;
-}
-.show-time__elements {
-  font-weight: 600;
-  color: #AFAFAF;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-.show-time_list:first-child .show-time_elements {
-  display: block;
-}
-.show-time__list  .show-time__elements{
-  display: none;
-}
-.show-time .show-time_list:first-child .show-time_blank {
-  height: 24px;
-}
-.show-time__div {
-  width: 20%;
-}
-.show-time_div button {
-  background-color: #323232;
-  color: white;
-  width: 100%;
-  border: 1px solid #323232;
-  border-radius: 3px;
-  padding: 8px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.show-time_elements {
-  font-weight: 600;
-  color: #AFAFAF;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-.show-time_elements__value {
-  font-size: 20px;
-  font-weight: 400;
-  color: #323232;
-}
-.show-time_list-selected {
-  background-color: #e1e1e1;
-}
-.show-time .error-message {
-  color: red;
-  text-align: center;
-  font-weight: 600;
-}
-.show-time_elements__date {
-  font-size: 20px;
-  font-weight: 600;
-}
-.show-time__list:first-child .show-time__elements {
-  display: block;
-}
-.show-time__list  .show-time__elements{
-  display: none;
-}
+
+  .show {
+    font-size: 36px;
+    font-weight: 700;
+    margin-left: 7%;
+    margin-bottom: 0%;
+  }
+
+  .show-time {
+    &__list {
+      display: flex;
+      justify-content: space-evenly;
+      border-bottom: 1px solid $mercury;
+      flex-direction: row;
+    }
+
+    &__elements {
+      display: none;
+    }
+
+    &__list:first-child {
+      .show-time__elements {
+        display: block;
+      }
+
+      &__list:first-child {
+        .show-time_blank {
+          height: 24px;
+        }
+      }
+    }
+
+    &__div {
+      width: 20%;
+
+      &__button {
+        background-color: $bandsite-black;
+        color: white;
+        border: 1px solid $bandsite-black;
+        border-radius: 3px;
+        padding: 8px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .show-time_elements {
+    font-weight: 600;
+    color: $silver;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    &__value {
+      font-size: 20px;
+      font-weight: 400;
+      color: $bandsite-black;
+    }
+
+    &__date {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  .show-time_list-selected {
+    background-color: $mercury;
+  }
+
   // Footer. Contact block
   .contact {
     padding: 1.5rem;
     margin: 0 auto;
-    background-color: #323232;
+    background-color: $bandsite-black;
 
     .contact__description,
     .contact__social-media,
@@ -475,8 +455,9 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      background-color: #323232;
+      background-color: $bandsite-black;
       color: #fff;
+      flex-direction: row;
 
       .address {
         flex: 1 1 30%;
@@ -517,11 +498,9 @@
       color: #fff;
     }
   }
-
 }
 
-@media(min-width: 768px) and (max-width:1279px) {
-
+@media (min-width: 768px) and (max-width: 1279px){
   //TABLET
   /* Header*/
   .header {
@@ -537,7 +516,6 @@
         margin: 0;
       }
     }
-
     // Navigation
     .nav__list {
       display: flex;
@@ -552,11 +530,11 @@
       font-size: 0.875rem;
       position: relative;
       text-decoration: none;
-      color: #FAFAFA;
+      color: #fafafa;
       display: inline-block;
 
       &::after {
-        content: '';
+        content: "";
         display: block;
         position: absolute;
         width: 0;
@@ -575,44 +553,40 @@
       &.active::after {
         width: 100%;
       }
-
     }
-
   }
 
   .band__banner {
-    background-image: url(../Assets/Images/Photo-gallery-3.jpg);
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.388),
+        rgba(0, 0, 0, 0.347)
+      ),
+      url(../Assets/Images/hero-shows.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 63vh;
-    position: relative;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
 
+    &-heading {
+      width: 70%;
+    }
 
+    &-tagline {
+      font-size: 24px;
+      font-weight: 700;
+    }
 
     &-title {
-      position: absolute;
-      font-size: 1.875rem;
-      line-height: 2.375rem;
-      padding-left: 1.5rem;
-      color: white;
+      font-size: 60px;
+      font-weight: 700;
     }
 
-    &-song {
-      position: absolute;
-      top: 27%;
-      font-size: 1.875rem;
-      line-height: 2.375rem;
-      padding-left: 1.5rem;
-      color: white;
-
-    }
-
-    iframe {
-      position: absolute;
-      bottom: 10%;
-      width: 80vw;
-      height: 25vh;
-      left: 1.5rem;
+    &-soundcloud {
+      margin-left: 6%;
+      width: 50%;
     }
 
     a {
@@ -624,88 +598,84 @@
         text-decoration: underline;
       }
     }
-
   }
 
-   /* Container for the shows list */
-   .show {
+  /* Container for the shows list */
+  .show {
     font-size: 36px;
     font-weight: 700;
     margin-left: 7%;
     margin-bottom: 0%;
   }
-  .show-time__list {
-    display: flex;
-    justify-content: space-evenly;
-    border-bottom: 1px solid #e1e1e1;
-    flex-direction: row;
+
+  .show-time {
+    &__list {
+      display: flex;
+      justify-content: space-evenly;
+      border-bottom: 1px solid $mercury;
+      flex-direction: row;
+    }
+
+    &__elements {
+      display: none;
+    }
+
+    &__list:first-child {
+      .show-time__elements {
+        display: block;
+      }
+
+      &__list:first-child {
+        .show-time_blank {
+          height: 24px;
+        }
+      }
+    }
+
+    &__div {
+      width: 20%;
+
+      &__button {
+        background-color: $bandsite-black;
+        color: white;
+        border: 1px solid $bandsite-black;
+        border-radius: 3px;
+        padding: 8px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+    }
   }
-  .show-time__elements {
-    font-weight: 600;
-    color: #AFAFAF;
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  .show-time_list:first-child .show-time_elements {
-    display: block;
-  }
-  .show-time__list  .show-time__elements{
-    display: none;
-  }
-  .show-time .show-time_list:first-child .show-time_blank {
-    height: 24px;
-  }
-  .show-time__div {
-    width: 20%;
-  }
-  .show-time_div button {
-    background-color: #323232;
-    color: white;
-    width: 100%;
-    border: 1px solid #323232;
-    border-radius: 3px;
-    padding: 8px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
+
   .show-time_elements {
     font-weight: 600;
-    color: #AFAFAF;
+    color: $silver;
     font-size: 20px;
     margin-bottom: 20px;
-  }
-  .show-time_elements__value {
-    font-size: 20px;
-    font-weight: 400;
-    color: #323232;
+
+    &__value {
+      font-size: 20px;
+      font-weight: 400;
+      color: $bandsite-black;
+    }
+
+    &__date {
+      font-size: 20px;
+      font-weight: 600;
+    }
   }
   .show-time_list-selected {
-    background-color: #e1e1e1;
+    background-color: $mercury;
   }
-  .show-time .error-message {
-    color: red;
-    text-align: center;
-    font-weight: 600;
-  }
-  .show-time_elements__date {
-    font-size: 20px;
-    font-weight: 600;
-  }
-  .show-time__list:first-child .show-time__elements {
-    display: block;
-  }
-  .show-time__list  .show-time__elements{
-    display: none;
-  }
+
   // Footer. Contact block
   .contact {
     padding: 1.5rem;
     margin: 0 auto;
-    background-color: #323232;
+    background-color: $bandsite-black;
 
     .contact__description,
-    .contact__social-media,
-    .contact__addresses,
+    .contact__social-media, 
     .contact__logo {
       padding-left: 1.5rem;
     }
@@ -746,9 +716,10 @@
     .contact__addresses {
       position: relative;
       display: flex;
+      flex-direction:row;
       justify-content: space-between;
       flex-wrap: wrap;
-      background-color: #323232;
+      background-color: $bandsite-black;
       color: #fff;
 
       .address {
@@ -791,4 +762,3 @@
     }
   }
 }
-
