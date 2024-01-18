@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type ="text/css" href="../styles/shows.css">
+
     <link rel="stylesheet" href="../styles/partials/_global.css" />
     <title>Show page </title>
 </head>
@@ -21,22 +24,27 @@
           </ul>
         </nav>
       </header>
-      <main class="main__content">
         <section class="band__banner">
-            <h3 class="band__banner-song"> RMXx100 Viva La Vida</h3>
-            <h3 class="band__banner-title">Coldplay</h3>
-            <iframe  scrolling="yes"  frameborder="0"auto src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1684269351&color=%23ff5500&auto_play=false&show_artwork=true&hide_related=true&show_comments=false&show_user=false&show_reposts=true&show_teaser=false"></iframe>
-            <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                <a href="https://soundcloud.com/rmx100"  target="_blank" style="color: #cccccc; text-decoration: none;"></a>
-                <a href="https://soundcloud.com/rmx100/coldplay-viva-la-vida-hasod-remix-preview" title="Coldplay" target="_blank" style="color: #cccccc; text-decoration: none;"></a></div>
+          ,<div class="band__banner-heading">
+            <p class="band__banner-tagline"> Beautiful Beasts Album</p>
+           <h1 class="band__banner-title">Queen of Yellow x For The Stings</h1>
+          </div>
+          <div class="band__banner-soundcloud">
+           <iframe 
+           width="100%";
+           height="150" 
+           scrolling="no"
+           frameborder="no"
+           allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1684269351&color=%23ff5500&auto_play=false&show_artwork=true&hide_related=true&show_comments=false&show_user=false&show_reposts=true&show_teaser=false">
+            </iframe>
+          </div>
           </section>
           <!-- Shows Section -->
           <main>
             <h3 class="show">Shows</h3>
             <section class="show-time">
-              <ul class="list">
-
-              </ul>
+              <ul class="show__list" style="padding:0"></ul>
             </section>
           </main>
                                  
