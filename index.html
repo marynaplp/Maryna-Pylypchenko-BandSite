@@ -2,12 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet" />
     <title>The Bees Knees</title>
-    <link rel="stylesheet" href="./styles/bio.css" />
-    <link rel="stylesheet" href="./styles/partials/_global.css" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/partials/_global.css" />
+    <link rel="stylesheet" href="./styles/bio.css" />
+
 
   </head>
   <body>
@@ -127,14 +129,14 @@
         <img src="./Assets/Images/Mohan-muruge.jpg" alt="Connor Walton Avatar" class="comment__avatar">
 
         <div class="comments__container">
-          <form class="comment__form">
+          <form class="comment__form" method="get" action="" >
             <label for="nameInput">Name</label>
             <input type="text" id="nameInput" class="comment__input" placeholder="Enter your name" required>
             
             <label for="commentInput">Comment</label>
             <textarea id="commentInput" class="comment__input" placeholder="Add a new comment" required></textarea>
             
-            <button type="submit" class="comment__submit">Comment</button>
+            <button class="comment__submit" type="submit">Comment</button>
           </form>
 
       </div>
@@ -152,23 +154,23 @@
           <!-- Social media links here -->
           <img
             class="contact__media-item"
-            src="./Assets/Icons/SVG/Icon-instagram.svg"
+            src="../Assets/Icons/SVG/Icon-instagram.svg"
             alt="instagram"
           />
 
           <img
             class="contact__media-item"
-            src="./Assets/Icons/SVG/Icon-facebook.svg"
+            src="../Assets/Icons/SVG/Icon-facebook.svg"
             alt="facebook"
           />
 
           <img
             class="contact__media-item"
-            src="./Assets/Icons/SVG/Icon-twitter.svg"
+            src="../Assets/Icons/SVG/Icon-twitter.svg"
             alt="twitter"
           />
         </div>
-        <img class="contact__logo" src="./Assets/Logo/Logo-bandsite.svg">
+        <img class="contact__logo" src="../Assets/Logo/Logo-bandsite.svg">
       </div>
       <div class="contact__addresses">
         <div class="address">
@@ -205,7 +207,7 @@
           >
         </div>
           <a href="/index.html">
-          <img class="footer__logo" src="./Assets/Logo/Logo-bandsite.svg" />
+          <img class="footer__logo" src="../Assets/Logo/Logo-bandsite.svg" />
         </a>
      
 
