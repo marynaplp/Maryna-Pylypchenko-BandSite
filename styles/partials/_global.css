@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("/path-to-fonts/Avenir-Regular.woff2") format("woff2"),
+    url("/path-to-fonts/Avenir-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("/path-to-fonts/Avenir-Bold.woff2") format("woff2"),
+    url("/path-to-fonts/Avenir-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("/path-to-fonts/Avenir-Italic.woff2") format("woff2"),
+    url("/path-to-fonts/Avenir-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Avenir Next Pro Lt", sans-serif;
+}
+
+/*# sourceMappingURL=_global.css.map */
