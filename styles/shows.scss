@@ -1,0 +1,764 @@
+@use "./partials/mixins" as *;
+
+
+header {
+  background-color: $bandsite-black;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .nav {
+    &__logo {
+      display: block;
+      margin: 0 auto;
+    }
+
+    &__list {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+      align-items: center;
+
+      li.nav__list-item {
+        padding-right: 2.25rem;
+
+        a {
+          position: relative;
+          text-decoration: none;
+          color: $mercury;
+          display: inline-block;
+
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.3s ease;
+          }
+
+          &.active {
+            color: #fff;
+          }
+
+          &:hover::after,
+          &.active::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.band__banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.285), rgba(0, 0, 0, 0.336)),
+    url(../Assets/Images/hero-shows.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+
+  &-heading {
+    width: 88%;
+    padding-left: 6%;
+  }
+
+  &-tagline {
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+  }
+
+  &-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+  }
+
+  &-soundcloud {
+    width: 88%;
+    margin-left: 6%;
+    margin-bottom: 10%;
+  }
+
+  a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.75rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.show {
+  font-size: 36px;
+  font-weight: 700;
+  margin-left: 0px;
+  margin-bottom: 0;
+}
+
+.show-time {
+  &__list {
+    border-bottom: 1px solid $mercury;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__div {
+    width: 100%;
+
+    button {
+      background-color: $bandsite-black;
+      color: white;
+      width: 100%;
+      border: 1px solid $bandsite-black;
+      border-radius: 3px;
+      padding: 15px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__elements {
+    font-weight: 600;
+    color: $silver;
+    font-size: 13px;
+    margin-bottom: 0px;
+
+    &__value {
+      font-size: 19px;
+      font-weight: 400;
+      color: $bandsite-black;
+      margin-top: 10px;
+    }
+
+    &__date {
+      font-size: 19px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+  }
+
+  &__list-selected {
+    background-color: $mercury;
+  }
+}
+
+/* Footer  */
+.contact {
+  margin: 0 auto;
+  background-color: $bandsite-black;
+  padding: 0;
+  margin-top: 1rem;
+
+  .contact__description {
+    padding-left: 1rem;
+
+    .contact__title {
+      padding-bottom: 1rem;
+      padding-top: 1.5rem;
+      color: #ffffff;
+      font-size: 1.25rem;
+      line-height: 2rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .contact__media {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .contact__media-item {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .contact__logo {
+      margin-right: 1.5rem;
+      display: none;
+    }
+  }
+
+  .contact__addresses {
+    justify-content: start;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: $bandsite-black;
+    color: #fff;
+
+    .address {
+      flex: 1 1 45%;
+      padding-left: 1rem;
+
+      .address__name,
+      .address__info,
+      .address__location,
+      .address__role {
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        font-weight: 600;
+      }
+
+      .address__email {
+        font-size: 0.75rem;
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .address__location {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  .footer__logo {
+    margin-left: 1rem;
+    margin-top: 5rem;
+  }
+
+  /* Copyright */
+  .contact__copyright {
+    padding-left: 1.2rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 400;
+    padding-bottom: 0.5rem;
+    color: #fff;
+  }
+}
+
+//Destop
+
+@include desktop {
+  .header {
+    background-color: #313131;
+    //  padding-top: 2.25rem;
+    // padding-bottom: 2.25rem;
+
+    .nav {
+      display: flex;
+      width: 100%;
+
+      &__logo {
+        padding-left: 3rem;
+        padding-top: 1rem;
+        margin: 0;
+      }
+
+      &__list {
+        display: flex;
+        list-style: none;
+
+        li.nav__list-item {
+          padding-right: 2.25rem;
+
+          a {
+            position: relative;
+            text-decoration: none;
+            color: #fafafa;
+            display: inline-block;
+
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              width: 0;
+              height: 2px;
+              top: 2.8125rem;
+              left: 0;
+              background-color: #fff;
+              transition: width 0.3s ease;
+            }
+
+            &:hover::after,
+            &.active::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .band__banner {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.388),
+        rgba(0, 0, 0, 0.347)
+      ),
+      url(../Assets/Images/hero-shows.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+
+    &-heading {
+      width: 70%;
+    }
+
+    &-tagline {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    &-title {
+      font-size: 60px;
+      font-weight: 700;
+    }
+
+    &-soundcloud {
+      margin-left: 6%;
+      width: 50%;
+    }
+
+    a {
+      color: #cccccc;
+      text-decoration: none;
+      font-size: 0.75rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .show {
+    font-size: 36px;
+    font-weight: 700;
+    margin-left: 7%;
+    margin-bottom: 0%;
+  }
+
+  .show-time {
+    &__list {
+      display: flex;
+      justify-content: space-evenly;
+      border-bottom: 1px solid $mercury;
+      flex-direction: row;
+    }
+
+    &__elements {
+      display: none;
+    }
+
+    &__list:first-child {
+      .show-time__elements {
+        display: block;
+      }
+
+      &__list:first-child {
+        .show-time_blank {
+          height: 24px;
+        }
+      }
+    }
+
+    &__div {
+      width: 20%;
+
+      &__button {
+        background-color: $bandsite-black;
+        color: white;
+        border: 1px solid $bandsite-black;
+        border-radius: 3px;
+        padding: 8px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .show-time_elements {
+    font-weight: 600;
+    color: $silver;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    &__value {
+      font-size: 20px;
+      font-weight: 400;
+      color: $bandsite-black;
+    }
+
+    &__date {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  .show-time_list-selected {
+    background-color: $mercury;
+  }
+
+  // Footer. Contact block
+  .contact {
+    padding: 1.5rem;
+    margin: 0 auto;
+    background-color: $bandsite-black;
+
+    .contact__description,
+    .contact__social-media,
+    .contact__addresses,
+    .contact__logo {
+      padding-left: 1.5rem;
+    }
+
+    .contact__description {
+      display: flex;
+    }
+
+    .contact__title {
+      padding-top: 2rem;
+
+      margin: 0;
+      font-size: 1.25rem;
+      color: #ffffff;
+      line-height: 2rem;
+      font-weight: 600;
+    }
+
+    .contact__media {
+      padding-bottom: 1.5rem;
+      padding-top: 1.5rem;
+      margin-left: 2rem;
+      font-size: 1.25rem;
+      color: #ffffff;
+      line-height: 2rem;
+      font-weight: 600;
+    }
+
+    .contact__logo {
+      margin-left: auto;
+      margin-right: 1.5rem;
+    }
+
+    .contact__media-item {
+      margin-right: 1rem;
+    }
+
+    .contact__addresses {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background-color: $bandsite-black;
+      color: #fff;
+      flex-direction: row;
+
+      .address {
+        flex: 1 1 30%;
+
+        &__info,
+        &__name,
+        &__location,
+        &__role {
+          margin-top: 2.25rem;
+          margin-bottom: 2.25rem;
+          font-size: 0.75rem;
+          line-height: 1.25rem;
+          font-weight: 400;
+        }
+      }
+
+      a.address__email {
+        text-decoration: none;
+        color: #fff;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        font-weight: 400;
+        font-size: 0.75rem;
+      }
+    }
+
+    .footer__logo {
+      position: absolute;
+      left: 79%;
+      bottom: 104%;
+    }
+
+    .contact__copyright {
+      padding-left: 1.5rem;
+      font-size: 0.75rem;
+      padding-top: 2rem;
+      padding-bottom: 1.5rem;
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px){
+  //TABLET
+  /* Header*/
+  .header {
+    background-color: #313131;
+
+    .nav {
+      display: flex;
+      width: 100%;
+
+      &__logo {
+        padding-left: 1.5rem;
+        padding-top: 1rem;
+        margin: 0;
+      }
+    }
+    // Navigation
+    .nav__list {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav__list-item {
+      padding-right: 1.25rem;
+    }
+
+    .nav__list-item a {
+      font-size: 0.875rem;
+      position: relative;
+      text-decoration: none;
+      color: #fafafa;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 2px;
+        top: 2.8125rem;
+        left: 0;
+        background-color: #fff;
+        transition: width 0.3s ease;
+      }
+
+      &.active {
+        color: #fff;
+      }
+
+      &:hover::after,
+      &.active::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .band__banner {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.388),
+        rgba(0, 0, 0, 0.347)
+      ),
+      url(../Assets/Images/hero-shows.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+
+    &-heading {
+      width: 70%;
+    }
+
+    &-tagline {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    &-title {
+      font-size: 60px;
+      font-weight: 700;
+    }
+
+    &-soundcloud {
+      margin-left: 6%;
+      width: 50%;
+    }
+
+    a {
+      color: #cccccc;
+      text-decoration: none;
+      font-size: 0.75rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  /* Container for the shows list */
+  .show {
+    font-size: 36px;
+    font-weight: 700;
+    margin-left: 7%;
+    margin-bottom: 0%;
+  }
+
+  .show-time {
+    &__list {
+      display: flex;
+      justify-content: space-evenly;
+      border-bottom: 1px solid $mercury;
+      flex-direction: row;
+    }
+
+    &__elements {
+      display: none;
+    }
+
+    &__list:first-child {
+      .show-time__elements {
+        display: block;
+      }
+
+      &__list:first-child {
+        .show-time_blank {
+          height: 24px;
+        }
+      }
+    }
+
+    &__div {
+      width: 20%;
+
+      &__button {
+        background-color: $bandsite-black;
+        color: white;
+        border: 1px solid $bandsite-black;
+        border-radius: 3px;
+        padding: 8px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .show-time_elements {
+    font-weight: 600;
+    color: $silver;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    &__value {
+      font-size: 20px;
+      font-weight: 400;
+      color: $bandsite-black;
+    }
+
+    &__date {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  .show-time_list-selected {
+    background-color: $mercury;
+  }
+
+  // Footer. Contact block
+  .contact {
+    padding: 1.5rem;
+    margin: 0 auto;
+    background-color: $bandsite-black;
+
+    .contact__description,
+    .contact__social-media, 
+    .contact__logo {
+      padding-left: 1.5rem;
+    }
+
+    .contact__description {
+      display: flex;
+    }
+
+    .contact__title {
+      padding-top: 2rem;
+
+      margin: 0;
+      font-size: 1.25rem;
+      color: #ffffff;
+      line-height: 2rem;
+      font-weight: 600;
+    }
+
+    .contact__media {
+      padding-bottom: 1.5rem;
+      padding-top: 1.5rem;
+      margin-left: 2rem;
+      font-size: 1.25rem;
+      color: #ffffff;
+      line-height: 2rem;
+      font-weight: 600;
+    }
+
+    .contact__logo {
+      margin-left: auto;
+      margin-right: 1.5rem;
+    }
+
+    .contact__media-item {
+      margin-right: 1rem;
+    }
+
+    .contact__addresses {
+      position: relative;
+      display: flex;
+      flex-direction:row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background-color: $bandsite-black;
+      color: #fff;
+
+      .address {
+        flex: 1 1 30%;
+
+        &__info,
+        &__name,
+        &__location,
+        &__role {
+          margin-top: 2.25rem;
+          margin-bottom: 2.25rem;
+          font-size: 0.75rem;
+          line-height: 1.25rem;
+          font-weight: 400;
+        }
+      }
+
+      a.address__email {
+        text-decoration: none;
+        color: #fff;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        font-weight: 400;
+        font-size: 0.75rem;
+      }
+    }
+
+    .footer__logo {
+      position: absolute;
+      left: 79%;
+      bottom: 104%;
+    }
+
+    .contact__copyright {
+      padding-left: 1.5rem;
+      font-size: 0.75rem;
+      padding-top: 2rem;
+      padding-bottom: 1.5rem;
+      color: #fff;
+    }
+  }
+}
